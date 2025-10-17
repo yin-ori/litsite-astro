@@ -1,0 +1,119 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+
+const locale = 'de';
+const t = useTranslations(locale);
+const title = 'Forschungsberatung - LitSite';
+const description = 'Professionelle Beratung für Ihre Forschungsprojekte in den Bereichen Linguistik, Kulturwissenschaften und interkulturelle Studien.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['Forschungsberatung', 'Linguistik', 'Kulturwissenschaften', 'Akademische Beratung', 'Wissenschaft']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Header -->
+      <div class="mb-12">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">
+          Forschungsberatung
+        </h1>
+        <p class="text-warm-700 dark:text-dark-700 leading-relaxed text-lg">
+          Professionelle Unterstützung für Ihre wissenschaftlichen Projekte in den Bereichen
+          Sprach- und Kulturwissenschaften.
+        </p>
+      </div>
+
+      <!-- Content -->
+      <div class="space-y-8">
+        <section>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
+            Unsere Expertise
+          </h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              Mit umfangreicher Erfahrung in der deutsch-japanischen Sprachwissenschaft
+              und interkulturellen Forschung bieten wir maßgeschneiderte Beratung für
+              Ihre akademischen und wissenschaftlichen Projekte.
+            </p>
+            <p>
+              Unsere Beratungsleistungen umfassen methodische Unterstützung,
+              Literaturrecherche, Datenanalyse und die Entwicklung von Forschungsstrategien
+              für grenzüberschreitende Studien.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
+            Beratungsbereiche
+          </h2>
+          <div class="space-y-6">
+            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
+              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
+                Interkulturelle Linguistik
+              </h3>
+              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+                Vergleichende Sprachanalyse, Diskursanalyse und pragmatische Studien
+                zwischen deutschen und japanischen Sprachräumen.
+              </p>
+            </div>
+
+            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
+              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
+                Kulturwissenschaftliche Forschung
+              </h3>
+              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+                Unterstützung bei ethnographischen Studien, kulturellen Analysen und
+                soziologischen Forschungsprojekten im deutsch-japanischen Kontext.
+              </p>
+            </div>
+
+            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
+              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
+                Akademisches Schreiben
+              </h3>
+              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+                Beratung bei der Strukturierung wissenschaftlicher Arbeiten,
+                Methodenentwicklung und Präsentation von Forschungsergebnissen.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
+            Unser Ansatz
+          </h2>
+          <div class="text-warm-700 dark:text-dark-700 leading-relaxed space-y-4">
+            <p>
+              Jedes Forschungsprojekt ist einzigartig. Wir entwickeln mit Ihnen gemeinsam
+              einen individuellen Beratungsplan, der auf Ihre spezifischen Bedürfnisse
+              und Forschungsziele zugeschnitten ist.
+            </p>
+            <p>
+              Unsere Beratung erfolgt sowohl als Einzelberatung als auch in Form von
+              Workshops und kontinuierlicher Begleitung über den gesamten Forschungsprozess.
+            </p>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="mt-12 pt-8 border-t border-warm-300 dark:border-dark-300 text-center">
+          <p class="text-warm-700 dark:text-dark-700 mb-4">
+            Haben Sie ein Forschungsprojekt, bei dem Sie Unterstützung benötigen?
+          </p>
+          <a
+            href="/de/contact"
+            class="inline-block bg-warm-900 dark:bg-dark-900 text-warm-50 dark:text-dark-50 px-6 py-3 rounded-md hover:bg-warm-800 dark:hover:bg-dark-800 transition-colors font-medium"
+          >
+            Kostenlose Erstberatung anfragen
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,105 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+
+const locale = 'ja';
+const t = useTranslations(locale);
+
+const title = '翻訳サービス - LitSite';
+const description = '文学・学術テキストのプロフェッショナルドイツ語-日本語翻訳サービス';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['翻訳', 'ドイツ語', '日本語', '文学', '学術', 'プロフェッショナル']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Simple header -->
+      <div class="mb-16">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">翻訳</h1>
+        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+          ドイツ語と日本語間のプロフェッショナル翻訳サービス。
+          意味と文化的文脈の両方を保持することに重点を置いています。
+        </p>
+      </div>
+
+      <!-- Service details -->
+      <div class="space-y-12">
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">文学翻訳</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              文学翻訳には言語的スキル以上のものが必要です—声、スタイル、
+              そして文化的文脈を通じて意味が伝えられる微妙な方法への
+              理解が求められます。
+            </p>
+            <p>
+              小説、短編小説、詩、エッセイを扱い、翻訳作品が
+              言葉だけでなく、原作の精神も捉えることを確実にします。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">学術翻訳</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              学術テキストには精密性、一貫性、専門用語の深い理解が必要です。
+              私たちのアプローチは、学術的なトーンを維持しながら
+              複雑な概念を正確に伝えることを確実にします。
+            </p>
+            <p>
+              研究論文、学位論文、学会発表、学術出版物は
+              正確性と読みやすさの両方に細心の注意を払って処理されます。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">文化的適応</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              ドイツ語と日本語間の翻訳には、重要な文化的差異をナビゲートすることが
+              含まれます。文化的参照、慣用句、文脈依存の意味が
+              適切に適応されることを確実にします。
+            </p>
+            <p>
+              これには文化的感受性、ローカライゼーション決定に関するガイダンス、
+              ターゲット読者にとってのアクセシビリティを確保しながら
+              真正性を維持することが含まれます。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">品質保証</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              すべての翻訳は複数の査読段階を経ます：
+            </p>
+            <ul class="text-warm-600 dark:text-dark-600 text-sm space-y-1 ml-4">
+              <li>• 初期翻訳と文化的適応</li>
+              <li>• 専門用語一貫性チェック</li>
+              <li>• スタイルと流れの査読</li>
+              <li>• 最終校正と仕上げ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
+        <p class="text-warm-700 dark:text-dark-700 mb-4">翻訳プロジェクトについて話し合う準備はできましたか？</p>
+        <a
+          href="/ja/contact"
+          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
+        >
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

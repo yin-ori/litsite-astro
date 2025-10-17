@@ -1,0 +1,45 @@
+---
+import type { Locale } from '@/utils/i18n';
+import { getLocalizedPath, useTranslations } from '@/utils/i18n';
+
+export interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-12 bg-warm-50 dark:bg-dark-50 border-t border-warm-300 dark:border-dark-300">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="text-center">
+      <!-- Simple footer content -->
+      <p class="text-warm-700 dark:text-dark-700 text-sm mb-4">
+        © {currentYear} LitSite. Professional translation services.
+      </p>
+
+      <!-- Footer navigation -->
+      <nav class="flex justify-center space-x-6 text-sm">
+        <a
+          href={getLocalizedPath('/about', locale)}
+          class="text-warm-600 dark:text-dark-600 hover:text-warm-900 dark:hover:text-dark-900 transition-colors"
+        >
+          {t('nav.about')}
+        </a>
+        <a
+          href={getLocalizedPath('/services', locale)}
+          class="text-warm-600 dark:text-dark-600 hover:text-warm-900 dark:hover:text-dark-900 transition-colors"
+        >
+          {t('nav.services')}
+        </a>
+        <a
+          href={getLocalizedPath('/contact', locale)}
+          class="text-warm-600 dark:text-dark-600 hover:text-warm-900 dark:hover:text-dark-900 transition-colors"
+        >
+          {t('nav.contact')}
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>

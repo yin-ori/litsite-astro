@@ -1,0 +1,90 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+
+const locale = 'ja';
+const t = useTranslations(locale);
+
+const title = t('about.title');
+const description = t('about.description');
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['私たちについて', '専門知識', '翻訳', 'プロフェッショナル']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Simple header -->
+      <div class="mb-16">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">私たちについて</h1>
+        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+          文学・学術テキストに深い専門知識を持つプロフェッショナル翻訳サービス。
+        </p>
+      </div>
+
+      <!-- Content sections -->
+      <div class="space-y-12">
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">アプローチ</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              私たちの翻訳哲学は、意味だけでなく、原文の声、スタイル、
+              文化的背景を保持することに重点を置いています。
+            </p>
+            <p>
+              ドイツ語と日本語間の言語的・文化的なギャップを埋めることを専門とし、
+              それぞれの言語の独特のニュアンスに特別な注意を払っています。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">専門分野</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              <strong class="text-warm-900">文学翻訳：</strong> 小説、詩、エッセイ、創作作品などで、
+              スタイルと芸術的意図への細心の注意が必要な作品。
+            </p>
+            <p>
+              <strong class="text-warm-900">学術翻訳：</strong> 研究論文、学位論文、学術著作物で、
+              精密性と専門用語の正確性に重点を置いた翻訳。
+            </p>
+            <p>
+              <strong class="text-warm-900">文化コンサルティング：</strong> 異文化間プロジェクトにおける
+              文化的適応とローカライゼーションに関するガイダンス。
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">プロセス</h2>
+          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
+            <p>
+              各プロジェクトは、原文資料、文脈、対象読者の徹底的な分析から始まります。
+              翻訳がクライアントの特定のニーズと期待に応えることを確実にするため、
+              クライアントと密接に連携して作業を進めます。
+            </p>
+            <p>
+              私たちの校正プロセスは複数の査読段階を含み、言語的正確性と
+              目標言語での自然な流れの両方に焦点を当てています。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simple CTA -->
+      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
+        <p class="text-warm-700 dark:text-dark-700 mb-4">一緒に仕事をしてみませんか？</p>
+        <a
+          href="/ja/contact"
+          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
+        >
+          お問い合わせ
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

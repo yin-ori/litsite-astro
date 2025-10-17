@@ -1,0 +1,7 @@
+---
+// Root redirect to default language for SEO
+export const prerender = true;
+
+// This will redirect the root URL to the default language
+return Astro.redirect('/de/', 302);
+---

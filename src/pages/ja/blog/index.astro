@@ -1,0 +1,68 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+import { getBlogPosts } from '@/data/blog-posts';
+
+const locale = 'ja';
+const t = useTranslations(locale);
+
+const title = t('blog.title');
+const description = t('blog.description');
+const posts = getBlogPosts(locale);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['ブログ', '翻訳', '洞察', 'ドイツ語', '日本語', '文学']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Simple header -->
+      <div class="mb-16">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">ブログ</h1>
+        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
+          翻訳、言語、そして異文化コミュニケーションの芸術への洞察。
+        </p>
+      </div>
+
+      <!-- Blog posts list -->
+      <div class="space-y-16">
+        {posts.map((post) => (
+          <article class="group pb-12 border-b border-warm-200 dark:border-dark-200 last:border-b-0">
+            <div class="mb-4">
+              <h2 class="text-xl font-medium text-warm-900 mb-3 leading-tight">
+                <a
+                  href={`/ja/blog/${post.slug}`}
+                  class="hover:text-warm-700 transition-colors duration-200"
+                >
+                  {post.title}
+                </a>
+              </h2>
+              <div class="flex items-center space-x-3 text-warm-500 text-xs font-medium tracking-wide uppercase mb-4">
+                <time datetime={post.date}>
+                  {new Date(post.date).toLocaleDateString('ja-JP', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+                <span class="text-warm-400 dark:text-dark-400">•</span>
+                <span>{post.readTime}</span>
+              </div>
+            </div>
+            <p class="text-warm-600 leading-relaxed text-sm italic font-serif">
+              {post.excerpt}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <!-- Simple pagination placeholder -->
+      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300 text-center">
+        <p class="text-warm-600 dark:text-dark-600 text-sm">さらなる記事を準備中</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

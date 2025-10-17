@@ -1,0 +1,96 @@
+---
+import type { SEOProps } from '@/utils/seo';
+import {
+  generatePersonSchema,
+  generateProfessionalServiceSchema,
+  generateHreflangLinks,
+  generateOpenGraphTags,
+  generateTwitterCardTags
+} from '@/utils/seo';
+import { removeLocalePrefix } from '@/utils/i18n';
+
+export interface Props extends SEOProps {}
+
+const { title, description, locale, keywords = [], image, article } = Astro.props;
+
+// Get current path for hreflang
+const currentPath = removeLocalePrefix(Astro.url.pathname);
+
+// Generate structured data
+const personSchema = generatePersonSchema();
+const serviceSchema = generateProfessionalServiceSchema();
+
+// Generate hreflang links
+const hreflangLinks = generateHreflangLinks(currentPath);
+
+// Generate Open Graph and Twitter Card tags
+const ogTags = generateOpenGraphTags({ title, description, locale, image, article });
+const twitterTags = generateTwitterCardTags({ title, description, locale, image, article });
+
+// Canonical URL
+const canonicalUrl = `https://litsite.com${locale === 'de' ? '' : `/${locale}`}${currentPath}`;
+---
+
+<!-- Basic Meta Tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- SEO Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<meta name="author" content="LitSite" />
+<meta name="robots" content="index, follow" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Hreflang Links -->
+{hreflangLinks.map(({ hreflang, href }) => (
+  <link rel="alternate" hreflang={hreflang} href={href} />
+))}
+
+<!-- Open Graph Tags -->
+{ogTags.map(({ property, content }) => (
+  <meta property={property} content={content} />
+))}
+
+<!-- Twitter Card Tags -->
+{twitterTags.map(({ name, content }) => (
+  <meta name={name} content={content} />
+))}
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+<!-- Article Structured Data (if article) -->
+{article && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    datePublished: article.publishedTime,
+    dateModified: article.modifiedTime,
+    author: {
+      '@type': 'Person',
+      name: article.author || 'LitSite Professional',
+    },
+  })} />
+)}
+
+
+<!-- Performance and Core Web Vitals optimizations -->
+<meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#1a1814" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Preload critical resources -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />

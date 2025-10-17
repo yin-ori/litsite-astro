@@ -1,0 +1,135 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const locale = 'ja';
+const title = '文学翻訳の芸術 - LitSite ブログ';
+const description = '文学翻訳における忠実性と創造性の微妙なバランスを探る。';
+
+const article = {
+  publishedTime: '2024-10-01',
+  modifiedTime: '2024-10-01',
+  author: 'LitSite Professional',
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['文学翻訳', '翻訳芸術', '創造性', '忠実性']}
+  article={article}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Article header -->
+      <header class="mb-12">
+        <div class="mb-4">
+          <a
+            href="/ja/blog"
+            class="text-warm-600 hover:text-warm-900 transition-colors text-sm underline underline-offset-4"
+          >
+            ← ブログに戻る
+          </a>
+        </div>
+
+        <h1 class="text-2xl font-medium text-warm-900 mb-4">
+          文学翻訳の芸術
+        </h1>
+
+        <div class="flex items-center space-x-4 text-warm-600 dark:text-dark-600 text-sm">
+          <time datetime="2024-10-01">2024年10月1日</time>
+          <span>•</span>
+          <span>5分で読める</span>
+        </div>
+      </header>
+
+      <!-- Article content -->
+      <article class="prose prose-warm max-w-none">
+        <div class="space-y-6 text-warm-700 dark:text-dark-700 leading-relaxed">
+          <p>
+            文学翻訳は芸術と技巧の交差点に立ち、翻訳者には忠実な再現と
+            創造的解釈の微妙なバランスを取ることが求められます。技術翻訳や
+            商業翻訳とは異なり、文学作品には声、スタイル、そしてリズム、トーン、
+            文化的文脈を通じて意味が現れる微妙な方法への感受性が必要です。
+          </p>
+
+          <p>
+            ドイツ語と日本語—構造と文化的基盤が大きく異なる二つの言語—間で
+            翻訳する際、この課題は特に深刻になります。ドイツ語の精密性と
+            哲学的深さは、日本語の文脈的微妙さと美的感受性を通じて
+            表現されなければなりません。
+          </p>
+
+          <h2 class="text-lg font-medium text-warm-900 mt-8 mb-4">
+            忠実性の問題
+          </h2>
+
+          <p>
+            文学テキストに「忠実」であるとはどういう意味でしょうか？
+            表面的な忠実性は各語と文法構造を保持するかもしれませんが、
+            しばしば作品の精神を犠牲にします。文学翻訳における真の忠実性は、
+            原作を魅力的にする要素を理解し、その効果をターゲット言語で
+            再現する方法を見つけることを必要とします。
+          </p>
+
+          <p>
+            これは詩のリズムを保持するために文字通りの翻訳から離れることや、
+            新しい読者にとっての感情的インパクトを維持するために文化的参照を
+            適応させることを意味するかもしれません。翻訳者は言語だけでなく、
+            世界を見て理解する方法全体の間の橋渡しとなります。
+          </p>
+
+          <h2 class="text-lg font-medium text-warm-900 mt-8 mb-4">
+            創造的解釈
+          </h2>
+
+          <p>
+            文学翻訳は必然的に解釈的です。語の選択から文構造まで、
+            すべての選択は原作に対する翻訳者の理解を反映します。
+            この解釈的側面は最小化すべき欠陥ではなく、プロセスの
+            不可欠な部分です。
+          </p>
+
+          <p>
+            最良の文学翻訳は、原作者の独特な声と視点を尊重しながら、
+            ターゲット言語で自然で生き生きと感じられます。読者が
+            自分の文化的文脈の中でそれをアクセシブルで意味のあるものと
+            しながら、本当に異質なものに出会うことを可能にします。
+          </p>
+
+          <h2 class="text-lg font-medium text-warm-900 mt-8 mb-4">
+            翻訳者の不可視性
+          </h2>
+
+          <p>
+            逆説的に、最も成功した文学翻訳は、翻訳者の作業が最も
+            明らかでないものです。読者は翻訳者の声ではなく、
+            作者の声に出会うべきです。しかし、この不可視性を達成するには、
+            途方もないスキル、創造性、そして関わる両言語と文化の
+            深い理解が必要です。
+          </p>
+
+          <p>
+            文学翻訳は最終的に文化的仲介の行為です—読者に新しい思考と
+            感情の方法を紹介しながら、それらの体験を真にアクセシブルに
+            することです。それは保存と再創造、忠実な複写と創造的解釈、
+            不可視の技巧と可視の芸術の両方なのです。
+          </p>
+        </div>
+      </article>
+
+      <!-- Article footer -->
+      <footer class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
+        <p class="text-warm-600 text-sm mb-4">
+          文学翻訳サービスにご興味はありますか？
+        </p>
+        <a
+          href="/ja/contact"
+          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
+        >
+          お問い合わせ
+        </a>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>
