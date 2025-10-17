@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServicesOverviewTemplate from '@/components/templates/ServicesOverviewTemplate.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'ja';
@@ -7,98 +7,38 @@ const t = useTranslations(locale);
 
 const title = t('services.title');
 const description = t('services.description');
+
+const services = [
+  {
+    title: '翻訳',
+    description: 'ドイツ語と日本語間のプロフェッショナル翻訳サービス。文化的感受性と言語的精密性が必要な文学・学術テキストを専門としています。',
+    link: '/ja/services/translation',
+    linkText: '翻訳について詳しく'
+  },
+  {
+    title: '校正',
+    description: '翻訳されたテキストが正確性と文化的真正性を保持しながら自然な流れを維持するための包括的な校正・編集サービス。',
+    link: '/ja/services/proofreading',
+    linkText: '校正について詳しく'
+  },
+  {
+    title: '研究コンサルティング',
+    description: '言語学、文化研究、ドイツ・日本間の異文化研究分野における研究プロジェクトのための専門的なコンサルティング。',
+    link: '/ja/services/research',
+    linkText: '研究コンサルティングについて詳しく'
+  }
+];
 ---
 
-<BaseLayout
+<ServicesOverviewTemplate
   title={title}
   description={description}
   locale={locale}
-  keywords={['サービス', '翻訳', '校正', 'ドイツ語', '日本語']}
->
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Simple header -->
-      <div class="mb-16">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">サービス</h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-          お客様の特定のニーズに合わせた包括的な言語サービス。
-        </p>
-      </div>
-
-      <!-- Service sections -->
-      <div class="space-y-12">
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/ja/services/translation" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              翻訳
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              ドイツ語と日本語間のプロフェッショナル翻訳サービス。文化的感受性と
-              言語的精密性が必要な文学・学術テキストを専門としています。
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              文学作品 • 学術論文 • 文化的テキスト • 創作文章
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/ja/services/proofreading" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              校正
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              翻訳されたテキストが正確性と文化的真正性を保持しながら
-              自然な流れを維持するための包括的な校正・編集サービス。
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              スタイル編集 • 文化的適応 • 専門用語見直し • 最終仕上げ
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/ja/services/research" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              研究コンサルティング
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              言語学、文化研究、ドイツ・日本間の異文化研究分野における
-              研究プロジェクトのための専門的なコンサルティング。
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              方法論指導 • 文献調査 • データ分析 • 学術論文執筆
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Process overview -->
-      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
-        <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">私たちの作業プロセス</h2>
-        <div class="space-y-3 text-warm-700 text-sm">
-          <p>1. 初回相談とプロジェクト評価</p>
-          <p>2. 詳細見積もりとスケジュール協議</p>
-          <p>3. 翻訳または校正プロセス</p>
-          <p>4. 査読と修正段階</p>
-          <p>5. 最終納品とフォローアップサポート</p>
-        </div>
-
-        <div class="mt-6">
-          <a
-            href="/ja/contact"
-            class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
-          >
-            プロジェクトを開始する
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+  keywords={['サービス', '翻訳', '校正', '研究コンサルティング', 'ドイツ語', '日本語']}
+  pageTitle="サービス"
+  subtitle="お客様の特定のニーズに合わせた包括的な言語サービス。"
+  services={services}
+  ctaText="プロジェクトを開始する準備はできましたか？"
+  ctaLink="/ja/contact"
+  ctaLinkText="お問い合わせ"
+/>

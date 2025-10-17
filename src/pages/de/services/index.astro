@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import ServicesOverviewTemplate from '@/components/templates/ServicesOverviewTemplate.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'de';
@@ -7,100 +7,38 @@ const t = useTranslations(locale);
 
 const title = t('services.title');
 const description = t('services.description');
+
+const services = [
+  {
+    title: 'Übersetzung',
+    description: 'Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, spezialisiert auf literarische und akademische Texte, die kulturelle Sensibilität und sprachliche Präzision erfordern.',
+    link: '/de/services/translation',
+    linkText: 'Mehr zur Übersetzung'
+  },
+  {
+    title: 'Korrekturlesen',
+    description: 'Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten Texte einen natürlichen Fluss bewahren und gleichzeitig Genauigkeit und kulturelle Authentizität erhalten bleiben.',
+    link: '/de/services/proofreading',
+    linkText: 'Mehr zum Korrekturlesen'
+  },
+  {
+    title: 'Forschungsberatung',
+    description: 'Professionelle Beratung für Forschungsprojekte in den Bereichen Linguistik, Kulturwissenschaften und interkulturelle Studien zwischen Deutschland und Japan.',
+    link: '/de/services/research',
+    linkText: 'Mehr zur Forschungsberatung'
+  }
+];
 ---
 
-<BaseLayout
+<ServicesOverviewTemplate
   title={title}
   description={description}
   locale={locale}
-  keywords={['dienstleistungen', 'übersetzung', 'korrekturlesen', 'deutsch', 'japanisch']}
->
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Simple header -->
-      <div class="mb-16">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">Unser Angebot</h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-          Umfassende Sprachdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind.
-        </p>
-      </div>
-
-      <!-- Service sections -->
-      <div class="space-y-12">
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/de/services/translation" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              Übersetzungen
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, spezialisiert
-              auf literarische und akademische Texte, die kulturelle Sensibilität und
-              sprachliche Präzision erfordern.
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              Literarische Werke • Akademische Arbeiten • Kulturtexte • Kreatives Schreiben
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/de/services/proofreading" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              Lektorat
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten
-              Texte einen natürlichen Fluss bewahren und gleichzeitig Genauigkeit und kulturelle
-              Authentizität erhalten bleiben.
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              Stilbearbeitung • Kulturelle Anpassung • Terminologieprüfung • Feinschliff
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            <a href="/de/services/research" class="hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4">
-              Forschungsberatung
-            </a>
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Professionelle Beratung für Forschungsprojekte in den Bereichen Linguistik,
-              Kulturwissenschaften und interkulturelle Studien zwischen Deutschland und Japan.
-            </p>
-            <p class="text-warm-600 dark:text-dark-600 text-sm">
-              Methodenberatung • Literaturrecherche • Datenanalyse • Akademisches Schreiben
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Process overview -->
-      <div class="mt-16 pt-8 border-t border-warm-300">
-        <h2 class="text-lg font-medium text-warm-900 mb-4">Unser Arbeitsablauf</h2>
-        <div class="space-y-3 text-warm-700 text-sm">
-          <p>1. Erstberatung und Projektbewertung</p>
-          <p>2. Detailliertes Angebot und Zeitplanbesprechung</p>
-          <p>3. Übersetzungs- oder Korrekturleseprozess</p>
-          <p>4. Überprüfungs- und Überarbeitungsphase</p>
-          <p>5. Endgültige Lieferung und Nachbetreuung</p>
-        </div>
-
-        <div class="mt-6">
-          <a
-            href="/de/contact"
-            class="text-warm-900 hover:text-warm-700 transition-colors underline underline-offset-4"
-          >
-            Starten Sie Ihr Projekt
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+  keywords={['dienstleistungen', 'übersetzung', 'korrekturlesen', 'forschungsberatung', 'deutsch', 'japanisch']}
+  pageTitle="Unser Angebot"
+  subtitle="Umfassende Sprachdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind."
+  services={services}
+  ctaText="Bereit, Ihr Projekt zu starten?"
+  ctaLink="/de/contact"
+  ctaLinkText="Kontakt aufnehmen"
+/>

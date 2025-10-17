@@ -1,119 +1,48 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageTemplate from '@/components/templates/PageTemplate.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'ja';
 const t = useTranslations(locale);
+
 const title = '研究コンサルティング - LitSite';
 const description = '言語学、文化研究、異文化研究分野における研究プロジェクトのための専門的なコンサルティングサービス。';
+
+const sections = [
+  {
+    heading: '私たちの専門性',
+    content: [
+      'ドイツ語・日本語言語学および異文化研究における豊富な経験を活かし、学術・研究プロジェクトに対してカスタマイズされたコンサルティングをご提供いたします。',
+      '研究手法のサポート、文献調査、データ分析、そして国境を越えた研究戦略の開発まで、幅広いコンサルティングサービスを行っています。'
+    ]
+  },
+  {
+    heading: 'コンサルティング分野',
+    content: [
+      '<strong class="text-warm-900 dark:text-dark-900">異文化間言語学:</strong> ドイツ語圏と日本語圏における比較言語分析、談話分析、語用論的研究のサポートを行います。',
+      '<strong class="text-warm-900 dark:text-dark-900">文化研究:</strong> ドイツ・日本における民族誌的研究、文化分析、社会学的研究プロジェクトをサポートいたします。',
+      '<strong class="text-warm-900 dark:text-dark-900">学術的執筆:</strong> 学術論文の構成、方法論の開発、研究結果の発表に関するコンサルティングを行います。'
+    ]
+  },
+  {
+    heading: '私たちのアプローチ',
+    content: [
+      'すべての研究プロジェクトは独自性を持っています。お客様の特定のニーズと研究目標に合わせて、個別のコンサルティングプランを共同で開発いたします。',
+      '個別相談、ワークショップ、研究プロセス全体を通じた継続的サポートなど、様々な形態でコンサルティングをご提供いたします。'
+    ]
+  }
+];
 ---
 
-<BaseLayout
+<PageTemplate
   title={title}
   description={description}
   locale={locale}
   keywords={['研究コンサルティング', '言語学', '文化研究', 'アカデミック', '学術相談']}
->
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Header -->
-      <div class="mb-12">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">
-          研究コンサルティング
-        </h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed text-lg">
-          言語・文化研究分野における学術プロジェクトのための
-          プロフェッショナルサポートをご提供いたします。
-        </p>
-      </div>
-
-      <!-- Content -->
-      <div class="space-y-8">
-        <section>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            私たちの専門性
-          </h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              ドイツ語・日本語言語学および異文化研究における豊富な経験を活かし、
-              学術・研究プロジェクトに対してカスタマイズされたコンサルティングを
-              ご提供いたします。
-            </p>
-            <p>
-              研究手法のサポート、文献調査、データ分析、そして国境を越えた
-              研究戦略の開発まで、幅広いコンサルティングサービスを行っています。
-            </p>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            コンサルティング分野
-          </h2>
-          <div class="space-y-6">
-            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
-              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
-                異文化間言語学
-              </h3>
-              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-                ドイツ語圏と日本語圏における比較言語分析、談話分析、
-                語用論的研究のサポートを行います。
-              </p>
-            </div>
-
-            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
-              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
-                文化研究
-              </h3>
-              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-                ドイツ・日本における民族誌的研究、文化分析、
-                社会学的研究プロジェクトをサポートいたします。
-              </p>
-            </div>
-
-            <div class="border-l-2 border-warm-300 dark:border-dark-300 pl-4">
-              <h3 class="font-medium text-warm-900 dark:text-dark-900 mb-2">
-                学術的執筆
-              </h3>
-              <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-                学術論文の構成、方法論の開発、研究結果の発表に関する
-                コンサルティングを行います。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">
-            私たちのアプローチ
-          </h2>
-          <div class="text-warm-700 dark:text-dark-700 leading-relaxed space-y-4">
-            <p>
-              すべての研究プロジェクトは独自性を持っています。お客様の
-              特定のニーズと研究目標に合わせて、個別のコンサルティング
-              プランを共同で開発いたします。
-            </p>
-            <p>
-              個別相談、ワークショップ、研究プロセス全体を通じた
-              継続的サポートなど、様々な形態でコンサルティングを
-              ご提供いたします。
-            </p>
-          </div>
-        </section>
-
-        <!-- CTA -->
-        <div class="mt-12 pt-8 border-t border-warm-300 dark:border-dark-300 text-center">
-          <p class="text-warm-700 dark:text-dark-700 mb-4">
-            サポートが必要な研究プロジェクトをお持ちですか？
-          </p>
-          <a
-            href="/ja/contact"
-            class="inline-block bg-warm-900 dark:bg-dark-900 text-warm-50 dark:text-dark-50 px-6 py-3 rounded-md hover:bg-warm-800 dark:hover:bg-dark-800 transition-colors font-medium"
-          >
-            無料初回相談のお申し込み
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+  pageTitle="研究コンサルティング"
+  subtitle="言語・文化研究分野における学術プロジェクトのためのプロフェッショナルサポートをご提供いたします。"
+  sections={sections}
+  ctaText="サポートが必要な研究プロジェクトをお持ちですか？"
+  ctaLink="/ja/contact"
+  ctaLinkText="無料初回相談のお申し込み"
+/>

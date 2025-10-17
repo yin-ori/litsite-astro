@@ -37,6 +37,11 @@ export default {
           800: '#d4d0ca', // Warm off-white
           900: '#f0ede8', // Soft off-white for text
         },
+        // Custom hover colors
+        hover: {
+          light: '#7d6ba2', // Purple hover for light mode
+          dark: '#bfaedc',  // Light purple hover for dark mode
+        },
       },
       typography: {
         DEFAULT: {
