@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageTemplate from '@/components/templates/PageTemplate.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'de';
@@ -7,100 +7,47 @@ const t = useTranslations(locale);
 
 const title = 'Korrekturlesedienste - LitSite';
 const description = 'Professionelle Korrekturlese- und Lektoratsdienste für übersetzte Texte';
+
+const sections = [
+  {
+    heading: 'Übersetzungsüberprüfung',
+    content: [
+      'Wir überprüfen Übersetzungen auf Genauigkeit, Konsistenz und kulturelle Angemessenheit. Dies umfasst die Prüfung der Terminologie, die Sicherstellung des angemessenen Tons und die Verifikation, dass kulturelle Bezüge korrekt angepasst wurden.',
+      'Unser Fokus liegt sowohl auf der technischen Genauigkeit der Übersetzung als auch darauf, wie natürlich sie sich in der Zielsprache liest.'
+    ]
+  },
+  {
+    heading: 'Stilbearbeitung',
+    content: [
+      'Über die Korrektheit hinaus stellen wir sicher, dass übersetzte Texte natürlich fließen und den angemessenen Stil für ihr Zielpublikum und ihren Zweck beibehalten.',
+      'Dies beinhaltet die Anpassung der Satzstruktur, die Verbesserung der Lesbarkeit und die Sicherstellung der Konsistenz in Stimme und Ton im gesamten Dokument.'
+    ]
+  },
+  {
+    heading: 'Kulturelle Sensibilität',
+    content: [
+      'Wir überprüfen Übersetzungen auf kulturelle Sensibilität und Angemessenheit, um sicherzustellen, dass kulturelle Bezüge, Humor und kontextabhängige Elemente effektiv vermittelt werden.',
+      'Dies ist besonders wichtig für Deutsch-Japanisch-Übersetzungen, wo kulturelle Unterschiede die Bedeutung und Rezeption erheblich beeinflussen können.'
+    ]
+  },
+  {
+    heading: 'Feinschliff',
+    content: [
+      'Die letzte Phase konzentriert sich auf die Perfektionierung des übersetzten Textes:<ul class="content-list"><li>• Grammatik- und Syntaxüberprüfung</li><li>• Verbesserung von Fluss und Lesbarkeit</li><li>• Konsistenz in Terminologie und Stil</li><li>• Abschließende Genauigkeitsprüfung</li></ul>'
+    ]
+  }
+];
 ---
 
-<BaseLayout
+<PageTemplate
   title={title}
   description={description}
   locale={locale}
   keywords={['korrekturlesen', 'lektorat', 'übersetzung', 'qualität', 'deutsch', 'japanisch']}
->
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Simple header -->
-      <div class="mb-16">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">Korrekturlesen</h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-          Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten
-          Texte einen natürlichen Fluss erreichen und gleichzeitig die Genauigkeit bewahren.
-        </p>
-      </div>
-
-      <!-- Service details -->
-      <div class="space-y-12">
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Übersetzungsüberprüfung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Wir überprüfen Übersetzungen auf Genauigkeit, Konsistenz und kulturelle
-              Angemessenheit. Dies umfasst die Prüfung der Terminologie, die Sicherstellung
-              des angemessenen Tons und die Verifikation, dass kulturelle Bezüge
-              korrekt angepasst wurden.
-            </p>
-            <p>
-              Unser Fokus liegt sowohl auf der technischen Genauigkeit der Übersetzung
-              als auch darauf, wie natürlich sie sich in der Zielsprache liest.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Stilbearbeitung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Über die Korrektheit hinaus stellen wir sicher, dass übersetzte Texte natürlich fließen
-              und den angemessenen Stil für ihr Zielpublikum
-              und ihren Zweck beibehalten.
-            </p>
-            <p>
-              Dies beinhaltet die Anpassung der Satzstruktur, die Verbesserung der Lesbarkeit
-              und die Sicherstellung der Konsistenz in Stimme und Ton im gesamten Dokument.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Kulturelle Sensibilität</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Wir überprüfen Übersetzungen auf kulturelle Sensibilität und Angemessenheit,
-              um sicherzustellen, dass kulturelle Bezüge, Humor und kontextabhängige
-              Elemente effektiv vermittelt werden.
-            </p>
-            <p>
-              Dies ist besonders wichtig für Deutsch-Japanisch-Übersetzungen,
-              wo kulturelle Unterschiede die Bedeutung
-              und Rezeption erheblich beeinflussen können.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Feinschliff</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Die letzte Phase konzentriert sich auf die Perfektionierung des übersetzten Textes:
-            </p>
-            <ul class="text-warm-600 dark:text-dark-600 text-sm space-y-1 ml-4">
-              <li>• Grammatik- und Syntaxüberprüfung</li>
-              <li>• Verbesserung von Fluss und Lesbarkeit</li>
-              <li>• Konsistenz in Terminologie und Stil</li>
-              <li>• Abschließende Genauigkeitsprüfung</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
-        <p class="text-warm-700 dark:text-dark-700 mb-4">Benötigen Sie eine Überprüfung Ihrer Übersetzung?</p>
-        <a
-          href="/de/contact"
-          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
-        >
-          Kontakt aufnehmen
-        </a>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+  pageTitle="Korrekturlesen"
+  subtitle="Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten Texte einen natürlichen Fluss erreichen und gleichzeitig die Genauigkeit bewahren."
+  sections={sections}
+  ctaText="Benötigen Sie eine Überprüfung Ihrer Übersetzung?"
+  ctaLink="/de/contact"
+  ctaLinkText="Kontakt aufnehmen"
+/>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Locale } from '@/utils/i18n';
+
+export interface ContentSection {
+  heading: string;
+  content: string[];
+}
+
+export interface PageTemplateProps {
+  title: string;
+  description: string;
+  locale: Locale;
+  keywords: string[];
+  pageTitle: string;
+  subtitle: string;
+  sections: ContentSection[];
+  ctaText?: string;
+  ctaLink?: string;
+  ctaLinkText?: string;
+}
+
+const {
+  title,
+  description,
+  locale,
+  keywords,
+  pageTitle,
+  subtitle,
+  sections,
+  ctaText,
+  ctaLink,
+  ctaLinkText
+} = Astro.props as PageTemplateProps;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={keywords}
+>
+  <div class="page-container">
+    <div class="page-wrapper">
+      <!-- Page header -->
+      <div class="mb-16">
+        <h1 class="page-title">{pageTitle}</h1>
+        <p class="content-text">{subtitle}</p>
+      </div>
+
+      <!-- Content sections -->
+      <div class="content-sections">
+        {sections.map((section) => (
+          <div>
+            <h2 class="section-title">{section.heading}</h2>
+            <div class="section-spacing content-text">
+              {section.content.map((paragraph) => (
+                <p set:html={paragraph}></p>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA section -->
+      {ctaText && (
+        <div class="section-divider">
+          <p class="content-text mb-4">{ctaText}</p>
+          {ctaLink && ctaLinkText && (
+            <a href={ctaLink} class="content-link">
+              {ctaLinkText}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>

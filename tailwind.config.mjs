@@ -51,5 +51,59 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    function({ addComponents }) {
+      addComponents({
+        // Page Layout Components
+        '.page-container': {
+          '@apply min-h-screen bg-warm-50 dark:bg-dark-50': {},
+        },
+        '.page-wrapper': {
+          '@apply max-w-2xl mx-auto px-6 py-16': {},
+        },
+
+        // Typography Components
+        '.page-title': {
+          '@apply text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6': {},
+        },
+        '.section-title': {
+          '@apply text-lg font-medium text-warm-900 dark:text-dark-900 mb-4': {},
+        },
+        '.content-text': {
+          '@apply text-warm-700 dark:text-dark-700 leading-relaxed': {},
+        },
+        '.content-text-small': {
+          '@apply text-warm-600 dark:text-dark-600 text-sm': {},
+        },
+
+        // Interactive Components
+        '.content-link': {
+          '@apply text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4': {},
+        },
+        '.nav-link': {
+          '@apply hover:text-warm-900 dark:hover:text-dark-900 transition-colors underline underline-offset-4': {},
+        },
+
+        // Section Components
+        '.section-divider': {
+          '@apply mt-16 pt-8 border-t border-warm-300 dark:border-dark-300': {},
+        },
+        '.content-sections': {
+          '@apply space-y-12': {},
+        },
+        '.section-spacing': {
+          '@apply space-y-4': {},
+        },
+
+        // List Components
+        '.content-list': {
+          '@apply text-warm-600 dark:text-dark-600 text-sm space-y-1 ml-4': {},
+        },
+
+        // Navigation Components
+        '.nav-container': {
+          '@apply space-y-3 text-warm-700 dark:text-dark-700': {},
+        },
+      })
+    }
   ],
 };

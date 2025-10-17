@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageTemplate from '@/components/templates/PageTemplate.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'de';
@@ -7,100 +7,47 @@ const t = useTranslations(locale);
 
 const title = 'Übersetzungsdienstleistungen - LitSite';
 const description = 'Professionelle Deutsch-Japanisch-Übersetzungen für literarische und akademische Texte';
+
+const sections = [
+  {
+    heading: 'Literarische Übersetzung',
+    content: [
+      'Die Übersetzung von Literatur erfordert mehr als sprachliches Können – sie verlangt ein Verständnis für Stimme, Stil und die subtilen Wege, auf denen Bedeutung durch kulturellen Kontext vermittelt wird.',
+      'Wir arbeiten mit Romanen, Kurzgeschichten, Lyrik und Essays und stellen sicher, dass die übersetzte Arbeit nicht nur die Worte, sondern auch den Geist des Originals einfängt.'
+    ]
+  },
+  {
+    heading: 'Akademische Übersetzung',
+    content: [
+      'Akademische Texte erfordern Präzision, Konsistenz und ein tiefes Verständnis spezialisierter Terminologie. Unser Ansatz stellt sicher, dass komplexe Konzepte genau vermittelt werden, während der wissenschaftliche Ton beibehalten wird.',
+      'Forschungsarbeiten, Dissertationen, Konferenzvorträge und akademische Publikationen erhalten sorgfältige Aufmerksamkeit sowohl für Genauigkeit als auch Lesbarkeit.'
+    ]
+  },
+  {
+    heading: 'Kulturelle Anpassung',
+    content: [
+      'Die Übersetzung zwischen Deutsch und Japanisch beinhaltet die Navigation erheblicher kultureller Unterschiede. Wir stellen sicher, dass kulturelle Bezüge, Redewendungen und kontextabhängige Bedeutungen angemessen angepasst werden.',
+      'Dies umfasst Beratung zu kultureller Sensibilität, Lokalisierungsentscheidungen und die Bewahrung von Authentizität bei gleichzeitiger Sicherstellung der Zugänglichkeit für das Zielpublikum.'
+    ]
+  },
+  {
+    heading: 'Qualitätssicherung',
+    content: [
+      'Jede Übersetzung durchläuft mehrere Überprüfungsphasen:<ul class="content-list"><li>• Erstübersetzung und kulturelle Anpassung</li><li>• Überprüfung der Terminologiekonsistenz</li><li>• Stil- und Flussüberprüfung</li><li>• Abschließendes Korrekturlesen und Feinschliff</li></ul>'
+    ]
+  }
+];
 ---
 
-<BaseLayout
+<PageTemplate
   title={title}
   description={description}
   locale={locale}
   keywords={['übersetzung', 'deutsch', 'japanisch', 'literarisch', 'akademisch', 'professionell']}
->
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Simple header -->
-      <div class="mb-16">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">Übersetzung</h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed">
-          Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, mit Fokus auf
-          die Bewahrung von Bedeutung und kulturellem Kontext.
-        </p>
-      </div>
-
-      <!-- Service details -->
-      <div class="space-y-12">
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Literarische Übersetzung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Die Übersetzung von Literatur erfordert mehr als sprachliches Können – sie verlangt ein
-              Verständnis für Stimme, Stil und die subtilen Wege, auf denen Bedeutung durch
-              kulturellen Kontext vermittelt wird.
-            </p>
-            <p>
-              Wir arbeiten mit Romanen, Kurzgeschichten, Lyrik und Essays und stellen sicher, dass
-              die übersetzte Arbeit nicht nur die Worte, sondern auch den Geist
-              des Originals einfängt.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Akademische Übersetzung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Akademische Texte erfordern Präzision, Konsistenz und ein tiefes Verständnis
-              spezialisierter Terminologie. Unser Ansatz stellt sicher, dass komplexe Konzepte
-              genau vermittelt werden, während der wissenschaftliche Ton beibehalten wird.
-            </p>
-            <p>
-              Forschungsarbeiten, Dissertationen, Konferenzvorträge und akademische
-              Publikationen erhalten sorgfältige Aufmerksamkeit sowohl für Genauigkeit als auch Lesbarkeit.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Kulturelle Anpassung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Die Übersetzung zwischen Deutsch und Japanisch beinhaltet die Navigation erheblicher
-              kultureller Unterschiede. Wir stellen sicher, dass kulturelle Bezüge, Redewendungen und
-              kontextabhängige Bedeutungen angemessen angepasst werden.
-            </p>
-            <p>
-              Dies umfasst Beratung zu kultureller Sensibilität, Lokalisierungsentscheidungen
-              und die Bewahrung von Authentizität bei gleichzeitiger Sicherstellung der Zugänglichkeit für das
-              Zielpublikum.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-4">Qualitätssicherung</h2>
-          <div class="space-y-4 text-warm-700 dark:text-dark-700 leading-relaxed">
-            <p>
-              Jede Übersetzung durchläuft mehrere Überprüfungsphasen:
-            </p>
-            <ul class="text-warm-600 dark:text-dark-600 text-sm space-y-1 ml-4">
-              <li>• Erstübersetzung und kulturelle Anpassung</li>
-              <li>• Überprüfung der Terminologiekonsistenz</li>
-              <li>• Stil- und Flussüberprüfung</li>
-              <li>• Abschließendes Korrekturlesen und Feinschliff</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
-        <p class="text-warm-700 dark:text-dark-700 mb-4">Bereit, Ihr Übersetzungsprojekt zu besprechen?</p>
-        <a
-          href="/de/contact"
-          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
-        >
-          Kontakt aufnehmen
-        </a>
-      </div>
-    </div>
-  </div>
-</BaseLayout>
+  pageTitle="Übersetzung"
+  subtitle="Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, mit Fokus auf die Bewahrung von Bedeutung und kulturellem Kontext."
+  sections={sections}
+  ctaText="Bereit, Ihr Übersetzungsprojekt zu besprechen?"
+  ctaLink="/de/contact"
+  ctaLinkText="Kontakt aufnehmen"
+/>
