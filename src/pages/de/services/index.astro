@@ -10,22 +10,22 @@ const description = t('services.description');
 
 const services = [
   {
-    title: 'Übersetzung',
-    description: 'Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, spezialisiert auf literarische und akademische Texte, die kulturelle Sensibilität und sprachliche Präzision erfordern.',
-    link: '/de/services/translation',
-    linkText: 'Mehr zur Übersetzung'
-  },
-  {
-    title: 'Korrekturlesen',
-    description: 'Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten Texte einen natürlichen Fluss bewahren und gleichzeitig Genauigkeit und kulturelle Authentizität erhalten bleiben.',
-    link: '/de/services/proofreading',
-    linkText: 'Mehr zum Korrekturlesen'
-  },
-  {
     title: 'Forschungsberatung',
     description: 'Professionelle Beratung für Forschungsprojekte in den Bereichen Linguistik, Kulturwissenschaften und interkulturelle Studien zwischen Deutschland und Japan.',
     link: '/de/services/research',
     linkText: 'Mehr zur Forschungsberatung'
+  },
+  {
+    title: 'Lektorat',
+    description: 'Umfassende Korrekturlese- und Lektoratsdienste, um sicherzustellen, dass Ihre übersetzten Texte einen natürlichen Fluss bewahren und gleichzeitig Genauigkeit und kulturelle Authentizität erhalten bleiben.',
+    link: '/de/services/proofreading',
+    linkText: 'Mehr zum Lektorat'
+  },
+  {
+    title: 'Übersetzung',
+    description: 'Professionelle Übersetzungsdienstleistungen zwischen Deutsch und Japanisch, spezialisiert auf literarische und akademische Texte, die kulturelle Sensibilität und sprachliche Präzision erfordern.',
+    link: '/de/services/translation',
+    linkText: 'Mehr zur Übersetzung'
   }
 ];
 ---
@@ -34,9 +34,9 @@ const services = [
   title={title}
   description={description}
   locale={locale}
-  keywords={['dienstleistungen', 'übersetzung', 'korrekturlesen', 'forschungsberatung', 'deutsch', 'japanisch']}
-  pageTitle="Unser Angebot"
-  subtitle="Umfassende Sprachdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind."
+  keywords={['dienstleistungen', 'übersetzung', 'lektorat', 'forschungsberatung', 'deutsch', 'japanisch']}
+  pageTitle="Angebot"
+  subtitle="Sprachdienstleistungen, die auf Ihre spezifischen Bedürfnisse zugeschnitten sind."
   services={services}
   ctaText="Bereit, Ihr Projekt zu starten?"
   ctaLink="/de/contact"

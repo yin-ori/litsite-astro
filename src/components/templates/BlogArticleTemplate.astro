@@ -1,0 +1,94 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Locale } from '@/utils/i18n';
+
+export interface Props {
+  title: string;
+  articleTitle: string;
+  description: string;
+  locale: Locale;
+  keywords: string[];
+  article: {
+    publishedTime: string;
+    modifiedTime: string;
+    author: string;
+  };
+  backLinkText: string;
+  backLinkHref: string;
+  publishedDate: string;
+  readTime: string;
+  ctaText: string;
+  ctaLinkText: string;
+  ctaLinkHref: string;
+}
+
+const {
+  title,
+  articleTitle,
+  description,
+  locale,
+  keywords,
+  article,
+  backLinkText,
+  backLinkHref,
+  publishedDate,
+  readTime,
+  ctaText,
+  ctaLinkText,
+  ctaLinkHref,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={keywords}
+  article={article}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Article header -->
+      <header class="mb-12">
+        <div class="mb-4">
+          <a
+            href={backLinkHref}
+            class="text-warm-600 dark:text-dark-600 hover:text-warm-900 dark:hover:text-dark-900 transition-colors text-sm underline underline-offset-4"
+          >
+            {backLinkText}
+          </a>
+        </div>
+
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-4">
+          {articleTitle}
+        </h1>
+
+        <div class="flex items-center space-x-4 text-warm-600 dark:text-dark-600 text-sm">
+          <time datetime={article.publishedTime}>{publishedDate}</time>
+          <span>•</span>
+          <span>{readTime}</span>
+        </div>
+      </header>
+
+      <!-- Article content -->
+      <article class="prose prose-warm dark:prose-dark max-w-none">
+        <div class="space-y-6 text-warm-700 dark:text-dark-700 leading-relaxed">
+          <slot />
+        </div>
+      </article>
+
+      <!-- Article footer -->
+      <footer class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
+        <p class="text-warm-600 dark:text-dark-600 text-sm mb-4">
+          {ctaText}
+        </p>
+        <a
+          href={ctaLinkHref}
+          class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4"
+        >
+          {ctaLinkText}
+        </a>
+      </footer>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('research', 'en');
+const { Content } = await entry.render();
+const { title, description, locale, keywords } = entry.data;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={keywords}
+>
+  <div class="page-container">
+    <div class="page-wrapper">
+      <div class="mb-16">
+        <h1 class="page-title">{title}</h1>
+      </div>
+
+      <article class="prose-research">
+        <Content />
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .prose-research {
+    @apply text-warm-700 dark:text-dark-700;
+  }
+
+  .prose-research h2 {
+    @apply text-xl font-medium text-warm-900 dark:text-dark-900 mb-6 mt-12 first:mt-0;
+  }
+
+  .prose-research h3 {
+    @apply text-lg font-medium text-warm-900 dark:text-dark-900 mb-2 mt-8;
+  }
+
+  .prose-research ul {
+    @apply space-y-4 my-6;
+  }
+
+  .prose-research li {
+    @apply leading-relaxed;
+  }
+
+  .prose-research strong {
+    @apply text-warm-900 dark:text-dark-900 font-medium;
+  }
+
+  .prose-research em {
+    @apply italic;
+  }
+
+  .prose-research a {
+    @apply text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4;
+  }
+
+  .prose-research p {
+    @apply mb-4 leading-relaxed;
+    font-family: 'Source Sans 3', 'Noto Sans JP', system-ui, sans-serif;
+  }
+
+  /* Section divider before "Weitere Informationen" */
+  .prose-research h2:has(+ p:first-of-type) {
+    @apply pt-8 border-t border-warm-300 dark:border-dark-300;
+  }
+</style>

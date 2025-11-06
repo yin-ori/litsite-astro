@@ -50,16 +50,16 @@ const {
         <p class="content-text">{subtitle}</p>
       </div>
 
-      <!-- Services grid -->
-      <div class="content-sections">
+      <!-- Services list -->
+      <div class="services-list">
         {services.map((service) => (
-          <div class="service-card">
+          <a href={service.link} class="service-card">
             <h2 class="section-title">{service.title}</h2>
             <p class="content-text mb-4">{service.description}</p>
-            <a href={service.link} class="content-link">
+            <span class="service-link-text">
               {service.linkText}
-            </a>
-          </div>
+            </span>
+          </a>
         ))}
       </div>
 
@@ -79,7 +79,77 @@ const {
 </BaseLayout>
 
 <style>
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
   .service-card {
-    @apply p-6 bg-warm-100 dark:bg-dark-200 rounded-lg border border-warm-200 dark:border-dark-300 hover:border-warm-300 dark:hover:border-dark-400 transition-colors;
+    display: block;
+    text-decoration: none;
+    padding: 2rem 1.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent,
+      rgba(191, 174, 220, 0.2) 20%,
+      rgba(191, 174, 220, 0.2) 80%,
+      transparent
+    );
+  }
+
+  :global(.dark) .service-card::after {
+    background: linear-gradient(to right,
+      transparent,
+      rgba(125, 107, 162, 0.25) 20%,
+      rgba(125, 107, 162, 0.25) 80%,
+      transparent
+    );
+  }
+
+  .service-card:last-child::after {
+    display: none;
+  }
+
+  .service-card:hover {
+    background-color: rgba(191, 174, 220, 0.08);
+    transform: translateX(4px);
+  }
+
+  :global(.dark) .service-card:hover {
+    background-color: rgba(125, 107, 162, 0.12);
+  }
+
+  .service-link-text {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #1c1917;
+    transition: color 0.2s ease;
+  }
+
+  :global(.dark) .service-link-text {
+    color: #f0ede8;
+  }
+
+  .service-card:hover .service-link-text {
+    color: #7d6ba2;
+  }
+
+  :global(.dark) .service-card:hover .service-link-text {
+    color: #bfaedc;
   }
 </style>

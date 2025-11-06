@@ -1,5 +1,5 @@
 ---
-import PageTemplate from '@/components/templates/PageTemplate.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
 import { useTranslations } from '@/utils/i18n';
 
 const locale = 'de';
@@ -7,42 +7,56 @@ const t = useTranslations(locale);
 
 const title = t('about.title');
 const description = t('about.description');
-
-const sections = [
-  {
-    heading: 'Unser Ansatz',
-    content: [
-      'Unsere Übersetzungsphilosophie konzentriert sich darauf, nicht nur die Bedeutung zu bewahren, sondern auch die Stimme, den Stil und den kulturellen Kontext des ursprünglichen Textes.',
-      'Wir sind spezialisiert darauf, die sprachliche und kulturelle Kluft zwischen Deutsch und Japanisch zu überbrücken, mit besonderer Aufmerksamkeit für die Nuancen, die jede Sprache einzigartig machen.'
-    ]
-  },
-  {
-    heading: 'Expertise',
-    content: [
-      '<strong class="text-warm-900 dark:text-dark-900">Literarische Übersetzung:</strong> Romane, Lyrik, Essays und kreative Werke, die sorgfältige Aufmerksamkeit für Stil und künstlerische Absicht erfordern.',
-      '<strong class="text-warm-900 dark:text-dark-900">Akademische Übersetzung:</strong> Forschungsarbeiten, Dissertationen und wissenschaftliche Werke mit Schwerpunkt auf Präzision und terminologischer Genauigkeit.',
-      '<strong class="text-warm-900 dark:text-dark-900">Kulturberatung:</strong> Beratung zur kulturellen Anpassung und Lokalisierung für interkulturelle Projekte.'
-    ]
-  },
-  {
-    heading: 'Arbeitsweise',
-    content: [
-      'Jedes Projekt beginnt mit einer gründlichen Analyse des Ausgangsmaterials, des Kontexts und der Zielgruppe. Wir arbeiten eng mit unseren Kunden zusammen, um sicherzustellen, dass die Übersetzung ihren spezifischen Bedürfnissen und Erwartungen entspricht.',
-      'Unser Lektoratsprozess umfasst mehrere Überprüfungsstufen und konzentriert sich sowohl auf sprachliche Genauigkeit als auch auf natürlichen Textfluss in der Zielsprache.'
-    ]
-  }
-];
 ---
 
-<PageTemplate
+<BaseLayout
   title={title}
   description={description}
   locale={locale}
-  keywords={['über uns', 'expertise', 'übersetzung', 'professionell']}
-  pageTitle="Über uns"
-  subtitle="Professionelle Übersetzungsdienstleistungen mit tiefgreifender Expertise in literarischen und akademischen Texten."
-  sections={sections}
-  ctaText="Interesse an einer Zusammenarbeit?"
-  ctaLink="/de/contact"
-  ctaLinkText="Kontakt aufnehmen"
-/>
+  keywords={['über mich', 'japanologie', 'übersetzung', 'forschung']}
+>
+<div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+  <div class="max-w-2xl mx-auto px-6 py-16">
+    <div class="mb-16">
+      <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">Über mich</h1>
+    </div>
+
+    <div class="space-y-6 text-warm-700 dark:text-dark-700 leading-relaxed">
+      <p>Ich freue mich, dass du hier bist!</p>
+
+      <p class="text-lg italic text-warm-800 dark:text-dark-800 font-serif border-l-2 border-warm-400 dark:border-dark-400 pl-4 my-8">
+        Hat dich vielleicht auch schon einmal etwas so in seinen Bann gezogen, dass du dich gar nicht mehr davon abwenden konntest?
+      </p>
+
+      <p>
+        Für mich ist das die Japanologie, durch die ich die japanische Kultur, Sprache, Literatur und Natur beleuchte und so immer neue Aspekte ihrer Ästhetik entdecke. Dabei fasziniert mich speziell die Verflechtung von Kultur und Sprache, die sich in der Forschung zu Japan (und der japanischen Sprache) eindrucksvoll präsentiert.
+      </p>
+
+      <p>
+        Meine Forschungsinteressen gründen sich auf eine tiefe Faszination für <em>bunpō</em> (japanische Grammatik), <em>bungo</em> (klassisches Japanisch), die Verflechtung von Sprache und Kultur, Semantik und die Entwicklung japanischer Schriftsysteme. Weiterhin forsche ich im Bereich der Kognitiven Linguistik sowie der Sprachphilosophie. Inwiefern Emotionen in der japanischen Sprache und Kultur verwoben sind, untersuche ich innerhalb meiner Dissertation.
+      </p>
+
+      <p>
+        In meiner Freizeit verbringe ich gern Familienzeit, verfasse <em>Haiku</em>, lese Romane und Kurzgeschichten, lasse aber auch hin und wieder mit Anime und Manga die Seele baumeln. Außerdem macht es mir Spaß, kulturelle Bezüge aufzuspüren und sie für andere zugänglich zu machen. Eines Winters hat mir eine Patientin meines Mannes in der Palliativstation ihre persönliche Haiku-Sammlung geliehen, die mich bis heute tief prägt daran erinnert, wie zerbrechlich und kostbar unsere Begegnungen sind.
+      </p>
+
+      <p>Ich schätze mich glücklich, mich jeden Tag aufs Neue an der Vielfalt der japanischen Kultur erfreuen zu dürfen.</p>
+
+      <p class="pt-8 border-t border-warm-300 dark:border-dark-300">
+        Würdest du mir von deinen Interessen erzählen? <a href="/de/contact" class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4 font-medium">Schreibe mir gern</a>, was dich bewegt, welche Fragen du mitbringst oder einfach, wer du bist!
+      </p>
+
+      <!-- Subtle haiku quote -->
+      <div class="mt-16 pt-12 border-t border-warm-200 dark:border-dark-200 relative">
+        <div class="w-10 h-[2px] bg-gradient-to-r from-transparent via-[#bfaedc] to-transparent mx-auto mb-8"></div>
+        <blockquote class="text-center text-warm-600 dark:text-dark-600 text-sm italic font-serif leading-relaxed">
+          Nach Frühlingsregen<br />
+          wartet in der Bücherei<br />
+          ein Stuhl nur auf mich.<br />
+          <span class="text-xs mt-2 block">一木 美鶴子</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+</BaseLayout>

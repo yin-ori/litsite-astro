@@ -1,4 +1,5 @@
 import type { Locale } from './i18n';
+import { SITE_CONFIG } from '@/constants/site';
 
 export interface SEOProps {
   title: string;
@@ -18,10 +19,10 @@ export function generatePersonSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'LitSite Professional',
+    name: `${SITE_CONFIG.name} Professional`,
     jobTitle: 'Translator and Proofreader',
     description: 'Professional translator and proofreader specializing in German-Japanese literary and academic texts',
-    url: 'https://litsite.com',
+    url: SITE_CONFIG.url,
     sameAs: [],
     knowsLanguage: [
       {
@@ -43,9 +44,9 @@ export function generateProfessionalServiceSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'LitSite Translation Services',
+    name: `${SITE_CONFIG.name} Translation Services`,
     description: 'Professional translation and proofreading services for literary and academic texts',
-    url: 'https://litsite.com',
+    url: SITE_CONFIG.url,
     serviceType: ['Translation', 'Proofreading', 'Literary Translation', 'Academic Translation'],
     areaServed: {
       '@type': 'Country',
@@ -69,9 +70,9 @@ export function generateProfessionalServiceSchema() {
 // Generate hreflang links
 export function generateHreflangLinks(currentPath: string) {
   return [
-    { hreflang: 'de', href: `https://litsite.com${currentPath}` },
-    { hreflang: 'ja', href: `https://litsite.com/ja${currentPath}` },
-    { hreflang: 'x-default', href: `https://litsite.com${currentPath}` },
+    { hreflang: 'de', href: `${SITE_CONFIG.url}${currentPath}` },
+    { hreflang: 'ja', href: `${SITE_CONFIG.url}/ja${currentPath}` },
+    { hreflang: 'x-default', href: `${SITE_CONFIG.url}${currentPath}` },
   ];
 }
 
@@ -84,7 +85,7 @@ export function generateOpenGraphTags(props: SEOProps) {
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
     { property: 'og:locale', content: locale === 'de' ? 'de_DE' : 'ja_JP' },
-    { property: 'og:site_name', content: 'LitSite' },
+    { property: 'og:site_name', content: SITE_CONFIG.name },
     ...(image ? [{ property: 'og:image', content: image }] : []),
   ];
 }

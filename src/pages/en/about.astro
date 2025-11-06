@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+const title = t('about.title');
+const description = t('about.description');
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['about', 'Japanese studies', 'translation', 'research']}
+>
+<div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+  <div class="max-w-2xl mx-auto px-6 py-16">
+    <div class="mb-16">
+      <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">About</h1>
+    </div>
+
+    <div class="space-y-6 text-warm-700 dark:text-dark-700 leading-relaxed">
+      <p>I'm glad you're here!</p>
+
+      <p class="text-lg italic text-warm-800 dark:text-dark-800 font-serif border-l-2 border-warm-400 dark:border-dark-400 pl-4 my-8">
+        Have you ever been so captivated by something that you couldn't turn away from it?
+      </p>
+
+      <p>
+        For me, that's Japanese Studies, through which I explore Japanese culture, language, literature, and nature, constantly discovering new aspects of its aesthetics. I'm particularly fascinated by the intertwining of culture and language, which presents itself impressively in research on Japan and the Japanese language.
+      </p>
+
+      <p>
+        My research interests are grounded in a deep fascination with <em>bunpō</em> (Japanese grammar), <em>bungo</em> (Classical Japanese), the interweaving of language and culture, semantics, and the development of Japanese writing systems. Furthermore, I conduct research in the field of Cognitive Linguistics and Philosophy of Language. I investigate how emotions are interwoven in Japanese language and culture within my dissertation.
+      </p>
+
+      <p>
+        In my free time, I enjoy spending time with family, writing <em>haiku</em>, reading novels and short stories, and occasionally relaxing with anime and manga. I also enjoy discovering cultural references and making them accessible to others. One winter, a patient of my husband's at a palliative care unit lent me her personal haiku collection, which continues to deeply shape me and reminds me how fragile and precious our encounters are.
+      </p>
+
+      <p>I consider myself fortunate to be able to delight in the diversity of Japanese culture anew every day.</p>
+
+      <p class="pt-8 border-t border-warm-300 dark:border-dark-300">
+        Would you tell me about your interests? <a href="/en/contact" class="text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4 font-medium">Feel free to write to me</a> about what moves you, what questions you bring, or simply who you are!
+      </p>
+
+      <!-- Subtle haiku quote -->
+      <div class="mt-16 pt-12 border-t border-warm-200 dark:border-dark-200 relative">
+        <div class="w-10 h-[2px] bg-gradient-to-r from-transparent via-[#bfaedc] to-transparent mx-auto mb-8"></div>
+        <blockquote class="text-center text-warm-600 dark:text-dark-600 text-sm italic font-serif leading-relaxed">
+          After spring rains<br />
+          waiting in the library<br />
+          a chair just for me.<br />
+          <span class="text-xs mt-2 block">Ichiki Mitsuko</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+</BaseLayout>

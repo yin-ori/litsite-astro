@@ -17,14 +17,12 @@ const { class: className, ...seoProps } = Astro.props;
   <head>
     <SEO {...seoProps} />
     <!-- Theme initialization script (must run before body rendering) -->
-    <script>
+    <script is:inline>
       (function() {
         function getTheme() {
-          // Check if user has explicitly set a theme preference
           if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
             return localStorage.getItem('theme');
           }
-          // Always default to light mode regardless of system preference
           return 'light';
         }
 
@@ -36,12 +34,8 @@ const { class: className, ...seoProps } = Astro.props;
           }
         }
 
-        // Initialize theme immediately to prevent flash
         const theme = getTheme();
         setTheme(theme);
-
-        // Note: No longer listening for system theme changes
-        // Users must explicitly choose their theme preference
       })();
     </script>
     <!-- Google Fonts -->
@@ -100,9 +94,30 @@ const { class: className, ...seoProps } = Astro.props;
     color-scheme: dark;
   }
 
-  /* Smooth transitions */
-  * {
+  /* Smooth transitions - targeted to specific elements for better performance */
+  a, button, .transition-colors, [class*="hover:"] {
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  /* Improved focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid #7d6ba2;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Ensure links have visible focus */
+  a:focus-visible {
+    outline-color: #7d6ba2;
+  }
+
+  /* Better contrast for small text */
+  .text-sm.text-warm-600 {
+    color: #6b6560; /* Slightly darker for better readability */
+  }
+
+  .dark .text-sm.text-dark-600 {
+    color: #a8a39a; /* Slightly lighter for better contrast in dark mode */
   }
 
 </style>

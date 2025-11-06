@@ -53,38 +53,18 @@ const toggleId = `dark-mode-toggle-${uniqueId}`;
 </button>
 
 <script define:vars={{ toggleId }}>
+  import { themeUtils } from '@/utils/theme';
+
   const toggle = document.getElementById(toggleId);
 
   if (toggle) {
-    // Check for saved theme preference or default to 'light'
-    const getTheme = () => {
-      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-        return localStorage.getItem('theme');
-      }
-      // Always default to light mode regardless of system preference
-      return 'light';
-    };
-
-    const setTheme = (theme) => {
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark');
-      } else {
-        document.documentElement.classList.add('dark');
-      }
-      localStorage.setItem('theme', theme);
-    };
-
     // Initialize theme
-    setTheme(getTheme());
+    const currentTheme = themeUtils.getTheme();
+    themeUtils.setTheme(currentTheme);
 
     // Toggle theme on button click
     toggle.addEventListener('click', () => {
-      const currentTheme = getTheme();
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      setTheme(newTheme);
+      themeUtils.toggleTheme();
     });
-
-    // Note: No longer listening for system theme changes
-    // Users must explicitly choose their theme preference
   }
 </script>

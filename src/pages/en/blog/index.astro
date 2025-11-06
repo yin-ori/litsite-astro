@@ -1,0 +1,129 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { useTranslations } from '@/utils/i18n';
+import { getBlogPosts } from '@/data/blog-posts';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+const title = t('blog.title');
+const description = t('blog.description');
+const posts = getBlogPosts(locale);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['blog', 'translation', 'insights', 'English', 'German', 'Japanese', 'literary']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-3xl mx-auto px-6 py-16">
+      <!-- Simple header -->
+      <div class="mb-16">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">Blog</h1>
+        <p class="text-warm-700 dark:text-dark-700 leading-relaxed max-w-2xl">
+          Insights into translation, language, and the art of intercultural communication.
+        </p>
+      </div>
+
+      <!-- Blog posts list -->
+      <div class="blog-posts-list">
+        {posts.map((post) => (
+          <article class="blog-post-card group">
+            <a
+              href={`/en/blog/${post.slug}`}
+              class="block"
+            >
+              <!-- Image -->
+              <div class="relative overflow-hidden rounded-sm mb-5 aspect-video bg-warm-200 dark:bg-dark-200">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="space-y-3">
+                <!-- Meta -->
+                <div class="flex items-center space-x-3 text-warm-500 dark:text-dark-500 text-xs font-medium tracking-wide uppercase">
+                  <time datetime={post.date}>
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
+                  </time>
+                  <span class="text-warm-400 dark:text-dark-400">•</span>
+                  <span>{post.readTime}</span>
+                </div>
+
+                <!-- Title -->
+                <h2 class="text-xl font-medium text-warm-900 dark:text-dark-900 leading-tight group-hover:text-warm-700 dark:group-hover:text-dark-700 transition-colors">
+                  {post.title}
+                </h2>
+
+                <!-- Excerpt -->
+                <p class="text-warm-600 dark:text-dark-600 leading-relaxed text-sm italic font-serif">
+                  {post.excerpt}
+                </p>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <!-- Simple pagination placeholder -->
+      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300 text-center">
+        <p class="text-warm-600 dark:text-dark-600 text-sm">More articles coming soon</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .blog-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .blog-post-card {
+    padding: 3rem 0;
+    position: relative;
+  }
+
+  .blog-post-card:first-child {
+    padding-top: 0;
+  }
+
+  .blog-post-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent,
+      rgba(191, 174, 220, 0.15) 15%,
+      rgba(191, 174, 220, 0.15) 85%,
+      transparent
+    );
+  }
+
+  :global(.dark) .blog-post-card::after {
+    background: linear-gradient(to right,
+      transparent,
+      rgba(125, 107, 162, 0.2) 15%,
+      rgba(125, 107, 162, 0.2) 85%,
+      transparent
+    );
+  }
+
+  .blog-post-card:last-child::after {
+    display: none;
+  }
+</style>

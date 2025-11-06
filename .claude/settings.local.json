@@ -1,9 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm install)",
-      "Bash(mkdir:*)",
-      "Read(//mnt/c/Users/sugawara_j/OneDrive/**)"
+      "Bash(cd:*)",
+      "Bash(npm install)"
     ],
     "deny": [],
     "ask": []

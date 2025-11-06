@@ -1,65 +1,76 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { useTranslations } from '@/utils/i18n';
+import { useTranslations, getLocalizedPath } from '@/utils/i18n';
 
 const locale = 'ja';
 const t = useTranslations(locale);
 
-const title = t('home.title');
-const description = t('home.description');
+const title = t('site.title');
+const description = t('site.description');
+
+const tiles = [
+  {
+    title: '私について',
+    description: '私の専門知識と研究について',
+    href: '/about',
+  },
+  {
+    title: '研究',
+    description: '学術的な仕事と研究の重点分野についての洞察',
+    href: '/research',
+  },
+  {
+    title: 'サービス',
+    description: '翻訳、校正、研究コンサルティング',
+    href: '/services',
+  },
+  {
+    title: 'ブログ',
+    description: '言語、文化、翻訳についての考察',
+    href: '/blog',
+  },
+  {
+    title: 'お問い合わせ',
+    description: 'お気軽にお問い合わせください',
+    href: '/contact',
+  },
+];
 ---
 
 <BaseLayout
   title={title}
   description={description}
   locale={locale}
-  keywords={['翻訳', '校正', 'ドイツ語', '日本語', '文学', '学術']}
+  keywords={['日本学', '翻訳', 'ドイツ語', '日本語', '異文化']}
 >
-  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
-    <div class="max-w-2xl mx-auto px-6 py-16">
-      <!-- Simple, clean introduction -->
-      <div class="mb-16">
-        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-6">LitSite</h1>
-        <p class="text-warm-700 dark:text-dark-700 leading-relaxed mb-8">
-          文学・学術テキストのプロフェッショナル翻訳・校正サービス
-        </p>
-        <p class="text-warm-600 dark:text-dark-600 leading-relaxed">
-          ドイツ語と日本語間の翻訳を専門とし、正確性と文化的ニュアンスに重点を置いています。
+  <div class="min-h-[calc(100vh-200px)] bg-warm-50 dark:bg-dark-50 flex items-center">
+    <div class="max-w-2xl mx-auto px-6 py-16 w-full">
+      <!-- Minimal intro -->
+      <div class="mb-16 text-center">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900 mb-3">
+          JM Sugawara
+        </h1>
+        <p class="text-warm-700 dark:text-dark-700">
+          日本学、翻訳、異文化交流
         </p>
       </div>
 
-      <!-- Simple navigation links -->
-      <div class="space-y-3 text-warm-700 dark:text-dark-700">
-        <div>
-          <a href="/ja/about" class="hover:text-hover-light dark:hover:text-hover-dark transition-colors underline underline-offset-4">
-            私たちのアプローチについて
+      <!-- Tile grid -->
+      <div class="grid grid-cols-1 gap-4">
+        {tiles.map((tile) => (
+          <a
+            href={getLocalizedPath(tile.href, locale)}
+            class="block p-6 bg-white dark:bg-dark-100 border border-warm-200 dark:border-dark-300 border-l-2 border-l-transparent hover:border-l-[#bfaedc] transition-all"
+            style="box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);"
+          >
+            <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-2">
+              {tile.title}
+            </h2>
+            <p class="text-sm text-warm-600 dark:text-dark-600">
+              {tile.description}
+            </p>
           </a>
-        </div>
-        <div>
-          <a href="/ja/services" class="hover:text-hover-light dark:hover:text-hover-dark transition-colors underline underline-offset-4">
-            提供サービス
-          </a>
-        </div>
-        <div>
-          <a href="/ja/blog" class="hover:text-hover-light dark:hover:text-hover-dark transition-colors underline underline-offset-4">
-            洞察と考察
-          </a>
-        </div>
-        <div>
-          <a href="/ja/contact" class="hover:text-hover-light dark:hover:text-hover-dark transition-colors underline underline-offset-4">
-            お問い合わせ
-          </a>
-        </div>
-      </div>
-
-      <!-- Subtle call-to-action -->
-      <div class="mt-16 pt-8 border-t border-warm-300 dark:border-dark-300">
-        <p class="text-warm-600 dark:text-dark-600 text-sm">
-          プロジェクトを始める準備はできましたか？
-          <a href="/ja/contact" class="text-warm-900 dark:text-dark-900 hover:text-hover-light dark:hover:text-hover-dark transition-colors underline underline-offset-4 ml-1">
-            お問い合わせください
-          </a>
-        </p>
+        ))}
       </div>
     </div>
   </div>
