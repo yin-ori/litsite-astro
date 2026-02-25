@@ -40,7 +40,7 @@ function isActive(href: string, exact: boolean = false): boolean {
         href={getLocalizedPath('/about', locale)}
         class="flex items-center gap-2 text-warm-900 dark:text-dark-900 font-medium hover:text-hover-light dark:hover:text-hover-dark transition-colors text-lg"
       >
-        <img src="/lavender.png" alt="Lavender" class="h-8 w-auto" />
+        <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/lavender.png`} alt="Lavender" class="h-8 w-auto" />
         <span>J<span class="text-[#BFAEDC]">M</span> Sugawara</span>
       </a>
 
