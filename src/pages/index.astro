@@ -3,5 +3,6 @@
 export const prerender = true;
 
 // This will redirect the root URL to the default language
-return Astro.redirect(`${import.meta.env.BASE_URL}en/research`, 302);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+return Astro.redirect(`${base}/en/research`, 302);
 ---
