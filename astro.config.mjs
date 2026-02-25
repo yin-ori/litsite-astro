@@ -4,22 +4,23 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://litsite.com',
+  site: 'https://yin-ori.github.io',
+  base: '/litsite-astro',
   integrations: [
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: 'de',
+        defaultLocale: 'en',
         locales: {
           de: 'de',
-          ja: 'ja',
+          en: 'en',
         },
       },
     }),
   ],
   i18n: {
-    defaultLocale: 'de',
-    locales: ['de', 'ja'],
+    defaultLocale: 'en',
+    locales: ['de', 'en'],
     routing: {
       prefixDefaultLocale: false
     }

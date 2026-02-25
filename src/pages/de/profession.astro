@@ -1,0 +1,187 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const locale = 'de';
+const title = 'Berufliches';
+const description = 'Beruflicher Werdegang, Qualifikationen und Projekte';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  locale={locale}
+  keywords={['qualifikationen', 'übersetzung', 'japanologie', 'projektmanagement', 'forschung']}
+>
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Header -->
+      <div class="mb-16">
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900">Berufliches</h1>
+      </div>
+
+      <!-- Beruflicher Werdegang -->
+      <section class="mb-12">
+        <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-6 pb-2 border-b border-warm-300 dark:border-dark-300">
+          Beruflicher Werdegang
+        </h2>
+        <div class="space-y-6">
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <p class="font-medium text-warm-800 dark:text-dark-800">DeepL</p>
+              <span class="text-warm-500 dark:text-dark-500 text-sm">2025</span>
+            </div>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Lokalisierung und Evaluierung von Übersetzungen (JP→DE)</p>
+          </div>
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <p class="font-medium text-warm-800 dark:text-dark-800">Japan Translation Center, Ltd</p>
+              <span class="text-warm-500 dark:text-dark-500 text-sm">seit 2024</span>
+            </div>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Übersetzerin</p>
+          </div>
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <p class="font-medium text-warm-800 dark:text-dark-800">WakuStudios Ltd (NamiComi)</p>
+              <span class="text-warm-500 dark:text-dark-500 text-sm">seit 2024</span>
+            </div>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Manga-, Webseiten- und App-Lokalisierung (EN→DE)</p>
+          </div>
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <p class="font-medium text-warm-800 dark:text-dark-800">Tourismusdestination Himeji</p>
+              <span class="text-warm-500 dark:text-dark-500 text-sm">2023</span>
+            </div>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Übersetzung von Tourismusinhalten (JP→DE)</p>
+          </div>
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <p class="font-medium text-warm-800 dark:text-dark-800">Gaming & Virtual Reality</p>
+              <span class="text-warm-500 dark:text-dark-500 text-sm">2022</span>
+            </div>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Übersetzung von Video-Content zu VR im Gaming (DE→JP)</p>
+          </div>
+        </div>
+      </section>
+
+       <!-- Sprachen -->
+      <section class="mb-12">
+        <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-6 pb-2 border-b border-warm-300 dark:border-dark-300">
+          Sprachen
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <span class="language-tag">Deutsch</span>
+          <span class="language-tag">Englisch</span>
+          <span class="language-tag">Japanisch</span>
+          <span class="language-tag">Italienisch</span>
+        </div>
+        <p class="text-warm-500 dark:text-dark-500 text-sm mt-6">
+          Übersetzungspaare: DE↔EN · DE↔JP · EN↔JP
+        </p>
+      </section>
+
+      <!-- Zertifikate -->
+      <section class="mb-12">
+        <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-6 pb-2 border-b border-warm-300 dark:border-dark-300">
+          Zertifikate
+        </h2>
+        <div class="grid gap-4">
+          <div class="cert-group">
+            <p class="text-warm-500 dark:text-dark-500 text-xs uppercase tracking-wide mb-2">Projektmanagement</p>
+            <ul class="space-y-1 text-warm-700 dark:text-dark-700 text-sm">
+              <li>Certified Associate in Project Management (CAPM)</li>
+              <li>Professional Scrum Master I (PSM I)</li>
+              <li>Professional Scrum Product Owner I & II (PSPO)</li>
+            </ul>
+          </div>
+          <div class="cert-group">
+            <p class="text-warm-500 dark:text-dark-500 text-xs uppercase tracking-wide mb-2">Forschungsmanagement</p>
+            <ul class="space-y-1 text-warm-700 dark:text-dark-700 text-sm">
+              <li>Doctorate Plus: Research Track</li>
+              <li>Doctorate Plus: Research Management Track</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Akademischer Werdegang -->
+      <section class="mb-12">
+        <h2 class="text-lg font-medium text-warm-900 dark:text-dark-900 mb-6 pb-2 border-b border-warm-300 dark:border-dark-300">
+          Akademischer Werdegang
+        </h2>
+        <div class="space-y-4">
+          <div class="qualification-item">
+            <p class="font-medium text-warm-800 dark:text-dark-800">Promotion <span class="font-normal text-warm-500 dark:text-dark-500 text-sm italic">(fortlaufend)</span></p>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Universität Bonn</p>
+          </div>
+          <div class="qualification-item">
+            <p class="font-medium text-warm-800 dark:text-dark-800">Doctoral Course <span class="font-normal text-warm-500 dark:text-dark-500 text-sm italic">(online)</span></p>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Universität Tromsø, Norwegen</p>
+          </div>
+          <div class="qualification-item">
+            <p class="font-medium text-warm-800 dark:text-dark-800">Master of Arts <span class="font-normal text-warm-500 dark:text-dark-500 text-sm italic">(ausgezeichnet)</span></p>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Universität Bonn</p>
+          </div>
+          <div class="qualification-item">
+            <p class="font-medium text-warm-800 dark:text-dark-800">Special Research Student</p>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Tohoku University, Japan</p>
+          </div>
+          <div class="qualification-item">
+            <p class="font-medium text-warm-800 dark:text-dark-800">Bachelor of Arts</p>
+            <p class="text-warm-600 dark:text-dark-600 text-sm">Universität Bonn</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .qualification-item {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(191, 174, 220, 0.3);
+  }
+
+  :global(.dark) .qualification-item {
+    border-left-color: rgba(125, 107, 162, 0.3);
+  }
+
+  .language-tag {
+    padding: 0.375rem 0.875rem;
+    background: rgba(191, 174, 220, 0.1);
+    border: 1px solid rgba(191, 174, 220, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #5a5a5a;
+  }
+
+  :global(.dark) .language-tag {
+    background: rgba(125, 107, 162, 0.15);
+    border-color: rgba(125, 107, 162, 0.25);
+    color: #c5c0b8;
+  }
+
+  .cert-group {
+    padding: 1rem;
+    background: rgba(250, 248, 245, 0.5);
+    border-radius: 0.25rem;
+  }
+
+  :global(.dark) .cert-group {
+    background: rgba(26, 24, 20, 0.5);
+  }
+
+  .experience-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  :global(.dark) .experience-item {
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .experience-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+</style>

@@ -14,15 +14,6 @@ const t = useTranslations(locale);
 const navigationItems = [
   { href: '/about', label: t('nav.about') },
   { href: '/research', label: t('nav.research_page') },
-  {
-    href: '/services',
-    label: t('nav.services'),
-    dropdown: [
-      { href: '/services/research', label: t('nav.research') },
-      { href: '/services/proofreading', label: t('nav.proofreading') },
-      { href: '/services/translation', label: t('nav.translation') },
-    ]
-  },
   { href: '/blog', label: t('nav.blog') },
   { href: '/contact', label: t('nav.contact') },
 ];
@@ -60,7 +51,7 @@ function isActive(href: string, exact: boolean = false): boolean {
               <a
                 href={getLocalizedPath(item.href, locale)}
                 class={`text-sm transition-colors flex items-center space-x-1 ${
-                  isActive(item.href, item.exact)
+                  isActive(item.href)
                     ? 'text-warm-900 dark:text-dark-900 font-medium'
                     : 'text-warm-700 dark:text-dark-700 hover:text-hover-light dark:hover:text-hover-dark'
                 }`}
@@ -71,7 +62,7 @@ function isActive(href: string, exact: boolean = false): boolean {
                 </svg>
               </a>
               <!-- Dropdown menu -->
-              <div class="absolute left-0 mt-2 py-2 bg-warm-50 dark:bg-dark-100 border border-warm-300 dark:border-dark-300 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-50 min-w-max">
+              <div class="absolute left-0 pt-2 pb-2 bg-warm-50 dark:bg-dark-100 border border-warm-300 dark:border-dark-300 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out z-50 min-w-max">
                 {item.dropdown.map((subItem) => (
                   <a
                     href={getLocalizedPath(subItem.href, locale)}
@@ -87,7 +78,7 @@ function isActive(href: string, exact: boolean = false): boolean {
             <a
               href={getLocalizedPath(item.href, locale)}
               class={`text-sm transition-colors ${
-                isActive(item.href, item.exact)
+                isActive(item.href)
                   ? 'text-warm-900 dark:text-dark-900 font-medium'
                   : 'text-warm-700 dark:text-dark-700 hover:text-hover-light dark:hover:text-hover-dark'
               }`}
@@ -130,7 +121,7 @@ function isActive(href: string, exact: boolean = false): boolean {
               <a
                 href={getLocalizedPath(item.href, locale)}
                 class={`text-sm font-medium block transition-colors ${
-                  isActive(item.href, item.exact)
+                  isActive(item.href)
                     ? 'text-warm-900 dark:text-dark-900'
                     : 'text-warm-700 dark:text-dark-700 hover:text-hover-light dark:hover:text-hover-dark'
                 }`}
@@ -152,7 +143,7 @@ function isActive(href: string, exact: boolean = false): boolean {
             <a
               href={getLocalizedPath(item.href, locale)}
               class={`block text-sm transition-colors ${
-                isActive(item.href, item.exact)
+                isActive(item.href)
                   ? 'text-warm-900 dark:text-dark-900 font-medium'
                   : 'text-warm-700 dark:text-dark-700 hover:text-hover-light dark:hover:text-hover-dark'
               }`}

@@ -1,71 +1,152 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { getEntry } from 'astro:content';
+import { getResearchData } from '@/data/research';
 
-const entry = await getEntry('research', 'en');
-const { Content } = await entry.render();
-const { title, description, locale, keywords } = entry.data;
+const locale = 'en';
+const data = getResearchData(locale);
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
+  title={data.pageTitle}
+  description="Research areas, talks and academic translations by JM Sugawara"
   locale={locale}
-  keywords={keywords}
+  keywords={['Research', 'Japanese Studies', 'Linguistics', 'Translation', 'Cognitive']}
 >
-  <div class="page-container">
-    <div class="page-wrapper">
+  <div class="min-h-screen bg-warm-50 dark:bg-dark-50">
+    <div class="max-w-2xl mx-auto px-6 py-16">
+      <!-- Header -->
       <div class="mb-16">
-        <h1 class="page-title">{title}</h1>
+        <h1 class="text-2xl font-medium text-warm-900 dark:text-dark-900">{data.pageTitle}</h1>
       </div>
 
-      <article class="prose-research">
-        <Content />
-      </article>
+      <!-- Academic Career -->
+      <section class="mb-12">
+        <h2 class="section-title">{data.sections.academicCareer}</h2>
+        <div class="space-y-4">
+          {data.academicCareer.map((item) => (
+            <div class="item-with-border">
+              <p class="item-title">
+                {item.title}
+                {item.note && <span class="item-note">({item.note})</span>}
+              </p>
+              <p class="item-subtitle">{item.institution}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Research Focus -->
+      <section class="mb-12">
+        <h2 class="section-title">{data.sections.researchFocus}</h2>
+        <div class="space-y-4">
+          {data.researchFocus.map((item) => (
+            <div class="item-with-border">
+              <p class="item-title">{item.title}</p>
+              <p class="item-subtitle">{item.subtitle}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Talks -->
+      <section class="mb-12">
+        <h2 class="section-title">{data.sections.talks}</h2>
+        <div class="space-y-4">
+          {data.talks.map((item) => (
+            <div class="item-with-border">
+              <p class="item-title">{item.title}</p>
+              <p class="item-subtitle">{item.venue}</p>
+              <p class="item-meta">
+                {item.date}
+                {item.note && ` · ${item.note}`}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Academic Translations -->
+      <section class="mb-12">
+        <h2 class="section-title">{data.sections.translations}</h2>
+        <div class="space-y-4">
+          {data.translations.map((item) => (
+            <div class="item-with-border">
+              <p class="item-title">{item.title}</p>
+              <p class="item-subtitle">{item.subtitle}</p>
+              <p class="item-meta">{item.year}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- More Information -->
+      <section class="mb-12 pt-8 border-t border-warm-300 dark:border-dark-300">
+        <h2 class="section-title">{data.sections.moreInfo}</h2>
+        <p class="text-warm-700 dark:text-dark-700 mb-4">{data.moreInfoText}</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://researchmap.jp/jmsugawara?lang=en" class="link-tag" target="_blank" rel="noopener">Researchmap</a>
+          <a href="https://orcid.org/0000-0001-5079-998X" class="link-tag" target="_blank" rel="noopener">ORCID</a>
+        </div>
+      </section>
+
     </div>
   </div>
 </BaseLayout>
 
-<style is:global>
-  .prose-research {
-    @apply text-warm-700 dark:text-dark-700;
+<style>
+  .section-title {
+    @apply text-lg font-medium text-warm-900 dark:text-dark-900 mb-6 pb-2 border-b border-warm-300 dark:border-dark-300;
   }
 
-  .prose-research h2 {
-    @apply text-xl font-medium text-warm-900 dark:text-dark-900 mb-6 mt-12 first:mt-0;
+  .item-with-border {
+    padding-left: 1rem;
+    border-left: 2px solid rgba(191, 174, 220, 0.3);
   }
 
-  .prose-research h3 {
-    @apply text-lg font-medium text-warm-900 dark:text-dark-900 mb-2 mt-8;
+  :global(.dark) .item-with-border {
+    border-left-color: rgba(125, 107, 162, 0.3);
   }
 
-  .prose-research ul {
-    @apply space-y-4 my-6;
+  .item-title {
+    @apply font-medium text-warm-800 dark:text-dark-800;
   }
 
-  .prose-research li {
-    @apply leading-relaxed;
+  .item-note {
+    @apply font-normal text-warm-500 dark:text-dark-500 text-sm italic ml-1;
   }
 
-  .prose-research strong {
-    @apply text-warm-900 dark:text-dark-900 font-medium;
+  .item-subtitle {
+    @apply text-warm-600 dark:text-dark-600 text-sm;
   }
 
-  .prose-research em {
-    @apply italic;
+  .item-meta {
+    @apply text-warm-500 dark:text-dark-500 text-xs mt-1 italic;
   }
 
-  .prose-research a {
-    @apply text-warm-900 dark:text-dark-900 hover:text-warm-700 dark:hover:text-dark-700 transition-colors underline underline-offset-4;
+  .link-tag {
+    padding: 0.375rem 0.875rem;
+    background: rgba(191, 174, 220, 0.1);
+    border: 1px solid rgba(191, 174, 220, 0.2);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    color: #5a5a5a;
+    text-decoration: none;
+    transition: all 0.2s ease;
   }
 
-  .prose-research p {
-    @apply mb-4 leading-relaxed;
-    font-family: 'Source Sans 3', 'Noto Sans JP', system-ui, sans-serif;
+  .link-tag:hover {
+    background: rgba(191, 174, 220, 0.2);
+    border-color: rgba(191, 174, 220, 0.3);
   }
 
-  /* Section divider before "Weitere Informationen" */
-  .prose-research h2:has(+ p:first-of-type) {
-    @apply pt-8 border-t border-warm-300 dark:border-dark-300;
+  :global(.dark) .link-tag {
+    background: rgba(125, 107, 162, 0.15);
+    border-color: rgba(125, 107, 162, 0.25);
+    color: #c5c0b8;
+  }
+
+  :global(.dark) .link-tag:hover {
+    background: rgba(125, 107, 162, 0.25);
+    border-color: rgba(125, 107, 162, 0.35);
   }
 </style>

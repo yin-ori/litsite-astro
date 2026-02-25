@@ -1,8 +1,0 @@
-{
-  "model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
-  "env": {
-    "CLAUDE_CODE_USE_BEDROCK": "1",
-    "AWS_PROFILE": "itcom",
-    "AWS_REGION": "us-east-1"
-  }
-}

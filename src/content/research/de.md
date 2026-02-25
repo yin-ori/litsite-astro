@@ -15,13 +15,13 @@ keywords: ['Forschung', 'Japanologie', 'Linguistik', 'Übersetzung', 'Kognitiv']
 ## Vorträge
 
 ### 2025/02: On Emotion Expressions in Classical Japanese (bungo)
-Tohoku University BUNGO-bun project 第10回研究会 (Eingeladener Vortrag)
+Tohoku University BUNGO-bun project 第10回研究会 (Vortrag auf Einladung)
 
 ### 2023/02: Reflections on Emotive Traces in Texts
 20th STaPs Augsburg / Budapest / Vienna
 
 ### 2019/10: Vernissage zur Plakatausstellung der Atombombenabwürfe auf Hiroshima und Nagasaki
-Hiroshima-Nagasaki-Project, Universität Bonn (Eingeladener Beitrag)
+Hiroshima-Nagasaki-Project, Universität Bonn (Beitrag auf Einladung)
 
 ## Wissenschaftliche Übersetzungen
 
