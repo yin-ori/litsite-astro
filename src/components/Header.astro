@@ -11,7 +11,9 @@ export interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const navigationItems = [
+type NavItem = { href: string; label: string; dropdown?: { href: string; label: string }[] };
+
+const navigationItems: NavItem[] = [
   { href: '/about', label: t('nav.about') },
   { href: '/research', label: t('nav.research_page') },
   { href: '/blog', label: t('nav.blog') },
