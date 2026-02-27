@@ -98,34 +98,25 @@ export function useTranslations(locale: Locale) {
   };
 }
 
-// Strip trailing slash from base URL, return empty string if base is just '/'
-function getBase(): string {
-  const base = import.meta.env.BASE_URL;
-  return base === '/' ? '' : base.replace(/\/$/, '');
-}
-
 // URL utilities - now all locales have explicit prefixes for better SEO
 export function getLocalizedPath(path: string, locale: Locale): string {
-  return `${getBase()}/${locale}${path}`;
+  return `/${locale}${path}`;
 }
 
 export function removeLocalePrefix(pathname: string): string {
-  const base = getBase();
-  const path = base ? pathname.replace(base, '') || '/' : pathname;
   for (const locale of locales) {
-    if (path.startsWith(`/${locale}/`)) {
-      return path.slice(`/${locale}`.length);
+    if (pathname.startsWith(`/${locale}/`)) {
+      return pathname.slice(`/${locale}`.length);
     }
-    if (path === `/${locale}`) {
+    if (pathname === `/${locale}`) {
       return '/';
     }
   }
-  return path;
+  return pathname;
 }
 
 export function getLocaleFromUrl(url: URL): Locale {
-  const base = getBase();
-  const pathname = base ? url.pathname.replace(base, '') || '/' : url.pathname;
+  const pathname = url.pathname;
   for (const locale of locales) {
     if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
       return locale;
