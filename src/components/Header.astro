@@ -40,7 +40,7 @@ function isActive(href: string, exact: boolean = false): boolean {
         href={getLocalizedPath('/about', locale)}
         class="flex items-center gap-2 text-warm-900 dark:text-dark-900 font-medium hover:text-hover-light dark:hover:text-hover-dark transition-colors text-lg"
       >
-        <img src="/lavender.png" alt="Lavender" class="h-8 w-auto" />
+        <img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/lavender.png`} alt="Lavender" class="h-8 w-auto" />
         <span>J<span class="text-[#BFAEDC]">M</span> Sugawara</span>
       </a>
 
@@ -93,12 +93,8 @@ function isActive(href: string, exact: boolean = false): boolean {
 
       <!-- Dark mode toggle, language switcher and mobile menu -->
       <div class="flex items-center space-x-4">
-        <div class="hidden sm:block">
-          <DarkModeToggle />
-        </div>
-        <div class="hidden sm:block">
-          <LanguageSwitcher locale={locale} />
-        </div>
+        <DarkModeToggle />
+        <LanguageSwitcher locale={locale} />
 
         <!-- Mobile menu button -->
         <button
@@ -154,11 +150,6 @@ function isActive(href: string, exact: boolean = false): boolean {
             </a>
           )
         ))}
-        <div class="pt-4 sm:hidden flex items-center space-x-3">
-          <LanguageSwitcher locale={locale} />
-          <span class="text-warm-400 dark:text-dark-400">|</span>
-          <DarkModeToggle />
-        </div>
       </div>
     </div>
   </div>
