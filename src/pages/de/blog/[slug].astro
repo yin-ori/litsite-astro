@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BlogArticleTemplate from '@/components/templates/BlogArticleTemplate.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.locale === 'de');
+  return posts.map(post => ({
+    params: { slug: post.slug.replace('de/', '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { title, description, keywords, publishedDate, modifiedDate, readTime, author } = post.data;
+
+const formattedDate = new Date(publishedDate).toLocaleDateString('de-DE', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BlogArticleTemplate
+  title={title}
+  articleTitle={title}
+  description={description}
+  locale="de"
+  keywords={keywords}
+  article={{
+    publishedTime: publishedDate,
+    modifiedTime: modifiedDate,
+    author: author,
+  }}
+  backLinkText="← Artikel"
+  backLinkHref="/de/blog"
+  publishedDate={formattedDate}
+  readTime={readTime}
+  ctaText="Interesse an literarischen Übersetzungs- oder Beratungsleistungen?"
+  ctaLinkText="Angebot ansehen"
+  ctaLinkHref="/de/services"
+>
+  <Content />
+</BlogArticleTemplate>

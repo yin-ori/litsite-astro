@@ -23,6 +23,20 @@ Tohoku University BUNGO-bun project 第10回研究会 (Vortrag auf Einladung)
 ### 2019/10: Vernissage zur Plakatausstellung der Atombombenabwürfe auf Hiroshima und Nagasaki
 Hiroshima-Nagasaki-Project, Universität Bonn (Beitrag auf Einladung)
 
+## Publikationen
+
+### 2024 — Buchbeitrag
+**"„Und auch der Mond schien inmitten der Gefahr bereits geflohen": Textuelle Emotionen in einigen Tanka zum Großen Kantō-Erdbeben von Yosano Akiko"**
+In: *Rückblicke zum Großen Kantō-Erdbeben von 1923: Literarische, historische, philosophische und visuelle Perspektiven*
+Hrsg. Harald Meyer & Reinhard Zöllner. OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2023).
+ISBN: 978-3-911262-05-7 · [Verlagsseite](https://www.ostasien-verlag.de/reihen/orientierungen/or/2023.html)
+
+### 2022 — Buchbeitrag
+**"Korona-ka: Das 'Corona-Unheil' und die Olympischen Spiele"**
+In: *Die Sommerolympiade „Tōkyō 2020" und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen*
+Hrsg. Mamoru Itō, Harald Meyer & Takahiro Nishiyama. OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2022).
+ISBN: 978-3-946114-94-9 · [Verlagsseite](https://www.ostasien-verlag.de/reihen/orientierungen/or/2022.html)
+
 ## Wissenschaftliche Übersetzungen
 
 - **2022:** "Nachrichten-Erfahrungen zu den Olympischen Spielen: Eine Fallstudie mit 18 Studierenden" von Shingo Dobashi, Hosei University (Japanisch→Deutsch)
