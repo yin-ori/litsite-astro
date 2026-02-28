@@ -73,7 +73,7 @@ export const researchData: Record<Locale, ResearchData> = {
     ],
     researchFocus: [
       { title: 'Betrachtungen textueller Emotionen im Zuge von Erdbeben in der Tôhoku-Region', subtitle: 'seit 2022' },
-      { title: "'Corona-Katastrophe' (korona-ka) während TOKYO2020", subtitle: '2022 · veröffentlicht' },
+      { title: 'Corona-Katastrophe' (korona-ka) während TOKYO2020, subtitle: '2022 · veröffentlicht' },
       { title: 'Konzeptueller Bedeutungswandel am Beispiel von ka', subtitle: '2021 · Masterarbeit' },
       { title: 'Übersetzung von Zeitzeugenberichten der Atombombenüberlebenden Frau Kimura', subtitle: '2019–2020 · NET-GTAS Global Peace & Universität Bonn' },
     ],
@@ -94,7 +94,7 @@ export const researchData: Record<Locale, ResearchData> = {
       },
       {
         title: 'Korona-ka: Das \'Corona-Unheil\' und die Olympischen Spiele',
-        book: 'Die Sommerolympiade „Tōkyō 2020" und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
+        book: 'Die Sommerolympiade Tōkyō 2020 und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
         editors: 'Hrsg. Mamoru Itō, Harald Meyer & Takahiro Nishiyama',
         publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2022)',
         year: '2022',
@@ -103,7 +103,7 @@ export const researchData: Record<Locale, ResearchData> = {
       },
     ],
     translations: [
-      { title: '"Nachrichten-Erfahrungen zu den Olympischen Spielen: Eine Fallstudie mit 18 Studierenden"', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
+      { title: 'Nachrichten-Erfahrungen zu den Olympischen Spielen: Eine Fallstudie mit 18 Studierenden', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
       { title: 'Zeugenaussagen der Atombombenüberlebenden Frau Hisako Kimura', subtitle: 'NET-GTAS Global Peace & Universität Bonn · JP↔DE', year: '2019' },
       { title: 'Agrarwissenschaftliche Fachtexte zu amacha und ajisai', subtitle: 'Promotionsprojekt, Landwirtschaftliche Fakultät Universität Bonn · JP→DE', year: '2019' },
       { title: '"Tosa Nikki": Übersetzungsanalyse der ersten drei Tage', subtitle: 'unpubliziert', year: '2019' },
@@ -130,7 +130,7 @@ export const researchData: Record<Locale, ResearchData> = {
     ],
     researchFocus: [
       { title: 'Observations on textual emotions in the context of earthquakes in the Tōhoku region', subtitle: 'since 2022' },
-      { title: "'Corona Disaster' (korona-ka) during TOKYO2020", subtitle: '2022 · published' },
+      { title: 'Corona Disaster' (korona-ka) during TOKYO2020, subtitle: '2022 · published' },
       { title: 'Conceptual semantic change using the example of ka', subtitle: '2021 · Master thesis' },
       { title: 'Translation of eyewitness accounts of atomic bomb survivor Mrs. Kimura', subtitle: '2019–2020 · NET-GTAS Global Peace & University of Bonn' },
     ],
@@ -151,7 +151,7 @@ export const researchData: Record<Locale, ResearchData> = {
       },
       {
         title: 'Korona-ka: Das \'Corona-Unheil\' und die Olympischen Spiele',
-        book: 'Die Sommerolympiade „Tōkyō 2020" und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
+        book: 'Die Sommerolympiade Tōkyō 2020 und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
         editors: 'Ed. Mamoru Itō, Harald Meyer & Takahiro Nishiyama',
         publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2022)',
         year: '2022',
@@ -160,7 +160,7 @@ export const researchData: Record<Locale, ResearchData> = {
       },
     ],
     translations: [
-      { title: '"News experiences of the Olympic Games: A case study with 18 students"', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
+      { title: 'News experiences of the Olympic Games: A case study with 18 students', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
       { title: 'Testimonies of atomic bomb survivor Mrs. Hisako Kimura', subtitle: 'NET-GTAS Global Peace & University of Bonn · JP↔DE', year: '2019' },
       { title: 'Agricultural science texts on amacha and ajisai', subtitle: 'PhD project, Faculty of Agriculture, University of Bonn · JP→DE', year: '2019' },
       { title: '"Tosa Nikki": Translation analysis of the first three days', subtitle: 'unpublished', year: '2019' },
