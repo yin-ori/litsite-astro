@@ -73,7 +73,7 @@ export const researchData: Record<Locale, ResearchData> = {
     ],
     researchFocus: [
       { title: 'Betrachtungen textueller Emotionen im Zuge von Erdbeben in der Tôhoku-Region', subtitle: 'seit 2022' },
-      { title: 'Corona-Katastrophe' (korona-ka) während TOKYO2020, subtitle: '2022 · veröffentlicht' },
+      { title: "'Corona-Katastrophe' (korona-ka) während TOKYO2020", subtitle: '2022 · veröffentlicht' },
       { title: 'Konzeptueller Bedeutungswandel am Beispiel von ka', subtitle: '2021 · Masterarbeit' },
       { title: 'Übersetzung von Zeitzeugenberichten der Atombombenüberlebenden Frau Kimura', subtitle: '2019–2020 · NET-GTAS Global Peace & Universität Bonn' },
     ],
@@ -130,7 +130,7 @@ export const researchData: Record<Locale, ResearchData> = {
     ],
     researchFocus: [
       { title: 'Observations on textual emotions in the context of earthquakes in the Tōhoku region', subtitle: 'since 2022' },
-      { title: 'Corona Disaster' (korona-ka) during TOKYO2020, subtitle: '2022 · published' },
+      { title: "'Corona Disaster' (korona-ka) during TOKYO2020", subtitle: '2022 · published' },
       { title: 'Conceptual semantic change using the example of ka', subtitle: '2021 · Master thesis' },
       { title: 'Translation of eyewitness accounts of atomic bomb survivor Mrs. Kimura', subtitle: '2019–2020 · NET-GTAS Global Peace & University of Bonn' },
     ],
