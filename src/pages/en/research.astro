@@ -65,6 +65,24 @@ const data = getResearchData(locale);
         </div>
       </section>
 
+      <!-- Publications -->
+      <section class="mb-12">
+        <h2 class="section-title">{data.sections.publications}</h2>
+        <div class="space-y-4">
+          {data.publications.map((item) => (
+            <div class="item-with-border">
+              <p class="item-title">{item.title}</p>
+              <p class="item-subtitle">In: <em>{item.book}</em></p>
+              <p class="item-subtitle">{item.editors} · {item.publisher}</p>
+              <p class="item-meta">
+                {item.year} · ISBN {item.isbn} ·{' '}
+                <a href={item.url} target="_blank" rel="noopener" class="underline underline-offset-2">Publisher page</a>
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <!-- Academic Translations -->
       <section class="mb-12">
         <h2 class="section-title">{data.sections.translations}</h2>

@@ -24,12 +24,23 @@ export interface Translation {
   year: string;
 }
 
+export interface Publication {
+  title: string;
+  book: string;
+  editors: string;
+  publisher: string;
+  year: string;
+  isbn: string;
+  url: string;
+}
+
 export interface ResearchData {
   pageTitle: string;
   sections: {
     academicCareer: string;
     researchFocus: string;
     talks: string;
+    publications: string;
     translations: string;
     moreInfo: string;
   };
@@ -37,6 +48,7 @@ export interface ResearchData {
   academicCareer: AcademicItem[];
   researchFocus: ResearchFocus[];
   talks: Talk[];
+  publications: Publication[];
   translations: Translation[];
 }
 
@@ -47,6 +59,7 @@ export const researchData: Record<Locale, ResearchData> = {
       academicCareer: 'Akademischer Werdegang',
       researchFocus: 'Forschungsschwerpunkte',
       talks: 'Vorträge',
+      publications: 'Publikationen',
       translations: 'Wissenschaftliche Übersetzungen',
       moreInfo: 'Weitere Informationen',
     },
@@ -69,6 +82,26 @@ export const researchData: Record<Locale, ResearchData> = {
       { title: 'Reflections on Emotive Traces in Texts', venue: '20th STaPs Augsburg / Budapest / Vienna', date: '2023/02' },
       { title: 'Vernissage zur Plakatausstellung der Atombombenabwürfe auf Hiroshima und Nagasaki', venue: 'Hiroshima-Nagasaki-Project, Universität Bonn', date: '2019/10', note: 'Beitrag auf Einladung' },
     ],
+    publications: [
+      {
+        title: '„Und auch der Mond schien inmitten der Gefahr bereits geflohen": Textuelle Emotionen in einigen Tanka zum Großen Kantō-Erdbeben von Yosano Akiko',
+        book: 'Rückblicke zum Großen Kantō-Erdbeben von 1923: Literarische, historische, philosophische und visuelle Perspektiven',
+        editors: 'Hrsg. Harald Meyer & Reinhard Zöllner',
+        publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2023)',
+        year: '2024',
+        isbn: '978-3-911262-05-7',
+        url: 'https://www.ostasien-verlag.de/reihen/orientierungen/or/2023.html',
+      },
+      {
+        title: 'Korona-ka: Das \'Corona-Unheil\' und die Olympischen Spiele',
+        book: 'Die Sommerolympiade „Tōkyō 2020" und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
+        editors: 'Hrsg. Mamoru Itō, Harald Meyer & Takahiro Nishiyama',
+        publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2022)',
+        year: '2022',
+        isbn: '978-3-946114-94-9',
+        url: 'https://www.ostasien-verlag.de/reihen/orientierungen/or/2022.html',
+      },
+    ],
     translations: [
       { title: '"Nachrichten-Erfahrungen zu den Olympischen Spielen: Eine Fallstudie mit 18 Studierenden"', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
       { title: 'Zeugenaussagen der Atombombenüberlebenden Frau Hisako Kimura', subtitle: 'NET-GTAS Global Peace & Universität Bonn · JP↔DE', year: '2019' },
@@ -83,6 +116,7 @@ export const researchData: Record<Locale, ResearchData> = {
       academicCareer: 'Academic Career',
       researchFocus: 'Research Focus',
       talks: 'Talks',
+      publications: 'Publications',
       translations: 'Academic Translations',
       moreInfo: 'More Information',
     },
@@ -104,6 +138,26 @@ export const researchData: Record<Locale, ResearchData> = {
       { title: 'On Emotion Expressions in Classical Japanese (bungo)', venue: 'Tohoku University BUNGO-bun project 第10回研究会', date: '2025/02', note: 'Invited talk' },
       { title: 'Reflections on Emotive Traces in Texts', venue: '20th STaPs Augsburg / Budapest / Vienna', date: '2023/02' },
       { title: 'Vernissage for the poster exhibition on the atomic bombings of Hiroshima and Nagasaki', venue: 'Hiroshima-Nagasaki-Project, University of Bonn', date: '2019/10', note: 'Invited contribution' },
+    ],
+    publications: [
+      {
+        title: '„Und auch der Mond schien inmitten der Gefahr bereits geflohen": Textuelle Emotionen in einigen Tanka zum Großen Kantō-Erdbeben von Yosano Akiko',
+        book: 'Rückblicke zum Großen Kantō-Erdbeben von 1923: Literarische, historische, philosophische und visuelle Perspektiven',
+        editors: 'Ed. Harald Meyer & Reinhard Zöllner',
+        publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2023)',
+        year: '2024',
+        isbn: '978-3-911262-05-7',
+        url: 'https://www.ostasien-verlag.de/reihen/orientierungen/or/2023.html',
+      },
+      {
+        title: 'Korona-ka: Das \'Corona-Unheil\' und die Olympischen Spiele',
+        book: 'Die Sommerolympiade „Tōkyō 2020" und die COVID-19-Pandemie in Japan: Mediendarstellungen und Analysen',
+        editors: 'Ed. Mamoru Itō, Harald Meyer & Takahiro Nishiyama',
+        publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2022)',
+        year: '2022',
+        isbn: '978-3-946114-94-9',
+        url: 'https://www.ostasien-verlag.de/reihen/orientierungen/or/2022.html',
+      },
     ],
     translations: [
       { title: '"News experiences of the Olympic Games: A case study with 18 students"', subtitle: 'Shingo Dobashi, Hosei University · JP→DE', year: '2022' },
