@@ -141,7 +141,7 @@ export const researchData: Record<Locale, ResearchData> = {
     ],
     publications: [
       {
-        title: '„Und auch der Mond schien inmitten der Gefahr bereits geflohen": Textuelle Emotionen in einigen Tanka zum Großen Kantō-Erdbeben von Yosano Akiko',
+        title: 'Und auch der Mond schien inmitten der Gefahr bereits geflohen: Textuelle Emotionen in einigen Tanka zum Großen Kantō-Erdbeben von Yosano Akiko',
         book: 'Rückblicke zum Großen Kantō-Erdbeben von 1923: Literarische, historische, philosophische und visuelle Perspektiven',
         editors: 'Ed. Harald Meyer & Reinhard Zöllner',
         publisher: 'OSTASIEN Verlag, Gossenberg (ORIENTIERUNGEN, Themenband 2023)',
