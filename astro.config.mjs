@@ -4,8 +4,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://yin-ori.github.io',
-  base: '/jms',
+  site: 'https://www.jmsugawara.com',
+  base: '/',
   integrations: [
     tailwind(),
     sitemap({
